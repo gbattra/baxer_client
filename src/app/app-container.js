@@ -1,12 +1,13 @@
 import React from 'react'
-// import FeedPageContainer from 'feed/feed-page-container'
+import PropTypes from 'prop-types'
+import FeedPageContainer from './feed/feed-page-container'
 
 
 class AppContainer extends React.Component {
   render() {
     return (
       <div>
-        Hey
+        <FeedPageContainer />
       </div>
     )
   }

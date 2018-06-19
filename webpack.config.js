@@ -15,9 +15,15 @@ var config = {
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-               presets: ['es2015', 'react']
+               presets: ['env', 'react'],
+               plugins: ['transform-class-properties']
             }
-         }
+         },
+         {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader?modules',
+            include: /flexboxgrid/
+          }
       ]
    }
 }
