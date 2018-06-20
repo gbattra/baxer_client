@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
-import Sidebar from './_sidebar'
+import SidebarOptionCard from './_sidebar-option-card'
 
 
 class SidebarContainer extends React.Component {
 
   props = {
-    label: PropTypes.string
+    label: PropTypes.string,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string
+    })),
+    handleOnOptionClick: PropTypes.func.isRequired
   }
 
   state = {
@@ -23,8 +27,14 @@ class SidebarContainer extends React.Component {
       <div>
         <Button onClick={this.handleToggle}>{this.props.label}</Button>
         <div>
-          <div>Hey</div>
-          <div>Hey 2</div>
+          {this.props.options.map((option) => {
+            return (
+              <SidebarOptionCard
+                label={option.label}
+                handleOnClick={this.props.handleOnOptionClick}
+              />
+            )
+          })}
         </div>
       </div>
     )

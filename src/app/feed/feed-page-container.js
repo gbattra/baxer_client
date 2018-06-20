@@ -5,6 +5,7 @@ import PlaylistsMenuContainer from './playlists-menu/playlists-menu-container'
 
 
 class FeedPageContainer extends React.Component {
+
   render() {
     return (
       <Grid fluid>
