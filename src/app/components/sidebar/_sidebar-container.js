@@ -28,12 +28,7 @@ class SidebarContainer extends React.Component {
         <Button onClick={this.handleToggle}>{this.props.label}</Button>
         <div>
           {this.props.options.map((option) => {
-            return (
-              <SidebarOptionCard
-                label={option.label}
-                handleOnClick={this.props.handleOnOptionClick}
-              />
-            )
+            return <div></div>
           })}
         </div>
       </div>

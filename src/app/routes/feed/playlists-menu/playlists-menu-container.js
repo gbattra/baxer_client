@@ -1,9 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SidebarContainer from '../../components/sidebar/_sidebar-container'
+import SidebarContainer from '../../../components/sidebar/_sidebar-container'
 
 
 class PlaylistsMenuContainer extends React.Component {
+
+  style = {
+    container: {
+      background: 'blue',
+      height: '100%'
+    }
+  }
 
   props = {
     playlists: PropTypes.array
@@ -20,11 +27,13 @@ class PlaylistsMenuContainer extends React.Component {
   render() {
     const playlists = [{label: 'Hey'}]
     return (
-      <SidebarContainer
-        label="Playlists"
-        options={playlists}
-        handleOnOptionClick={this.changePlaylist}
-      />
+      <div style={this.style.container}>
+        <SidebarContainer
+          label="Playlists"
+          options={playlists}
+          handleOnOptionClick={this.changePlaylist}
+        />
+      </div>
     )
   }
 }
