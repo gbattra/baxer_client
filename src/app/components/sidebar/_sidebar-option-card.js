@@ -3,14 +3,18 @@ import PropTypes from 'prop-types'
 
 
 class SidebarOptionCard extends React.Component {
-  props = {
+  static props = {
     label: PropTypes.string,
     size: PropTypes.string,
     handleOnClick: PropTypes.func.isRequired
   }
 
-  defaultProps = {
+  static defaultProps = {
     size: 'medium'
+  }
+
+  constructor(props, defaultProps) {
+    super(props, defaultProps);
   }
 
   handleOnClick = (value) => {

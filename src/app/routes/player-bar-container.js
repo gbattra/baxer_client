@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Grid, Row, Col} from 'react-flexbox-grid'
 
 
 class PlayerBarContainer extends React.Component {
 
   style = {
     barContainer: {
-      height: '5vh',
-      width: '100vw'
+      'height': '5vh',
+      'width': '100vw',
+      'position': 'absolute',
+      'background': 'white'
     }
   }
 
-  props = {
-    track: PropTypes.shape({
+  static props = {
+    playingTrack: PropTypes.shape({
       id: PropTypes.int,
       title: PropTypes.string,
       author: PropTypes.string,
@@ -21,16 +24,26 @@ class PlayerBarContainer extends React.Component {
     }).isRequired
   }
 
-  state = {
+  static state = {
     isPlaying: false,
     currentTrack: null,
     nextQueue: []
   }
 
+  constructor(props, defaultProps) {
+    super(props, defaultProps);
+  }
+
   render() {
     return (
       <div style={this.style.barContainer}>
-        Player
+        <Grid fluid>
+          <Row>
+            <Col sm={12} md={12}>
+              Player
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

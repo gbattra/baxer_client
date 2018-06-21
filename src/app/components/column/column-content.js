@@ -10,6 +10,10 @@ class ColumnContent extends React.Component {
     }
   }
 
+  constructor(props, defaultProps) {
+    super(props, defaultProps);
+  }
+
   render() {
     return (
       <div style={this.style.fullHeight}>

@@ -12,12 +12,16 @@ class PlaylistsMenuContainer extends React.Component {
     }
   }
 
-  props = {
+  static props = {
     playlists: PropTypes.array
   }
 
-  defaultProps = {
+  static defaultProps = {
     playlists: [{label: 'Hey'}]
+  }
+
+  constructor(props, defaultProps) {
+    super(props, defaultProps);
   }
 
   changePlaylist = (playlist) => {
@@ -25,12 +29,11 @@ class PlaylistsMenuContainer extends React.Component {
   }
 
   render() {
-    const playlists = [{label: 'Hey'}]
     return (
       <div style={this.style.playlistsMenuContainer}>
         <SidebarContainer
           label="Playlists"
-          options={playlists}
+          options={this.props.playlists}
           handleOnOptionClick={this.changePlaylist}
         />
       </div>
