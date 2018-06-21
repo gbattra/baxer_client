@@ -6,9 +6,9 @@ import SidebarContainer from '../../../components/sidebar/_sidebar-container'
 class PlaylistsMenuContainer extends React.Component {
 
   style = {
-    container: {
-      background: 'blue',
-      height: '100%'
+    playlistsMenuContainer: {
+      height: '100%',
+      background: 'gray'
     }
   }
 
@@ -27,7 +27,7 @@ class PlaylistsMenuContainer extends React.Component {
   render() {
     const playlists = [{label: 'Hey'}]
     return (
-      <div style={this.style.container}>
+      <div style={this.style.playlistsMenuContainer}>
         <SidebarContainer
           label="Playlists"
           options={playlists}

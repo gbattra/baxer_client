@@ -6,6 +6,10 @@ import SidebarOptionCard from './_sidebar-option-card'
 
 class SidebarContainer extends React.Component {
 
+  containerStyle = {
+    'text-align': 'center'
+  }
+
   props = {
     label: PropTypes.string,
     options: PropTypes.arrayOf(PropTypes.shape({
@@ -24,7 +28,7 @@ class SidebarContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={this.containerStyle}>
         <Button onClick={this.handleToggle}>{this.props.label}</Button>
         <div>
           {this.props.options.map((option) => {

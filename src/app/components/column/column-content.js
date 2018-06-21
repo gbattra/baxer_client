@@ -6,7 +6,6 @@ class ColumnContent extends React.Component {
 
   style = {
     fullHeight: {
-      background: 'blue',
       height: '100%'
     }
   }
@@ -18,6 +17,7 @@ class ColumnContent extends React.Component {
       </div>
     )
   }
+
 }
 
 export default ColumnContent
