@@ -30,8 +30,8 @@ class DashboardContainer extends React.Component {
   static defaultProps = {
     feedTrack: {
       id: 1,
-      title: 'Create',
-      author: 'Overwerk',
+      title: 'Head Full of Shadows',
+      author: 'The Glitch Mob',
       runtime: 120,
       album_art_url: ''
     }
@@ -42,7 +42,6 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props.feedTrack);
     return (
       <Grid fluid style={this.style.zeroBuffer}>
         <Row style={this.style.zeroBuffer}>
