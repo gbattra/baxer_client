@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DashboardContainer from './routes/dashboard-container'
-import PlayerBarContainer from './routes/player-bar-container'
+import DashboardContainer from './routes/dashboard/dashboard-container'
+import PlayerBarContainer from './routes/player-bar/player-bar-container'
 
 
 class AppContainer extends React.Component {

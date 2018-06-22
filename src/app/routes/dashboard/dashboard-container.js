@@ -4,7 +4,7 @@ import {Grid, Row, Col} from 'react-flexbox-grid'
 import PlaylistsMenuContainer from './feed/playlists-menu/playlists-menu-container'
 import FeedDashboardContainer from './feed/feed-dashboard/feed-dashboard-container'
 import FilterOptionsContainer from './feed/filter-options/filter-options-container'
-import ColumnContent from '../components/column/column-content'
+import ColumnContent from '../../_components/_column/_column-content'
 
 
 class DashboardContainer extends React.Component {
@@ -47,7 +47,7 @@ class DashboardContainer extends React.Component {
         <Row style={this.style.zeroBuffer}>
           <Col xs={3} md={3} style={this.style.zeroBuffer}>
             <ColumnContent>
-              <PlaylistsMenuContainer/>
+              <PlaylistsMenuContainer />
             </ColumnContent>
           </Col>
           <Col xs={6} md={6} style={this.style.zeroBuffer}>
