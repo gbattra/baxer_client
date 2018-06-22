@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 import TrackWaveform from './track-waveform'
+import FeedTrackAlbumArt from './feed-track-album-art'
 
 
 class FeedDashboardContainer extends React.Component {
@@ -40,14 +41,16 @@ class FeedDashboardContainer extends React.Component {
         </Row>
         <Row style={this.style.feedDashboard}>
           <Col sm={12} md={12}>
-            <Row>
+            <Row style={{'background':'red'}}>
               <Col sm={2} md={3}></Col>
-              <Col sm={8} md={6}>
-                <Row>
+              <Col sm={8} md={6} style={{'background':'blue'}}>
+                <Row style={{'background':'yellow'}}>
                   <Col sm={12} md={12}></Col>
                 </Row>
-                <Row>
-                  <Col sm={6} md={4}></Col>
+                <Row style={{'background':'pink'}}>
+                  <Col sm={6} md={8} style={{'margin':'auto'}}>
+                    <FeedTrackAlbumArt/>
+                  </Col>
                 </Row>
                 <Row>
                   {this.props.feedTrack.title}
@@ -61,9 +64,15 @@ class FeedDashboardContainer extends React.Component {
               </Col>
               <Col sm={2} md={3}></Col>
             </Row>
-            <Row>
+            <Row style={{'background':'black'}}>
               <Col sm={3} md={4}></Col>
-              <Col sm={6} md={4}></Col>
+              <Col sm={6} md={4} style={{'background':'orange'}}>
+                <Row>
+                  <Col sm={4} md={4}>Dislike</Col>
+                  <Col sm={4} md={4}>Play/Pause</Col>
+                  <Col sm={4} md={4}>Like</Col>
+                </Row>
+              </Col>
               <Col sm={3} md={4}></Col>
             </Row>
           </Col>
