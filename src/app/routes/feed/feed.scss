@@ -10,11 +10,6 @@
       display: inline-block;
     }
 
-    .search-container {
-      .input {
-        width: 100%;
-      }
-    }
   }
 }
 
@@ -25,4 +20,10 @@
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
+}
+
+.search-container {
+  .input {
+    width: 100%;
+  }
 }
