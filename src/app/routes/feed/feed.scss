@@ -5,6 +5,16 @@
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: hidden;
+
+    .feed-list-header {
+      display: inline-block;
+    }
+
+    .search-container {
+      .input {
+        width: 100%;
+      }
+    }
   }
 
   .feed-dashboard-container {

@@ -24,6 +24,10 @@ class FeedsList extends React.Component {
         empty: PropTypes.bool,
         circular: PropTypes.bool
       })
+    })),
+    feedsListItems: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      color: PropTypes.string
     }))
   }
 
@@ -38,6 +42,12 @@ class FeedsList extends React.Component {
           circular: true
         }
       }
+    ],
+    feedsListItems: [
+      {
+        name: 'My First Feed',
+        color: 'teal'
+      }
     ]
   }
 
@@ -48,23 +58,23 @@ class FeedsList extends React.Component {
   render() {
     return (
       <Grid padded>
-        <Grid.Row verticalAlign='middle'>
+        <Grid.Row verticalAlign='middle' className="left aligned">
           <Grid.Column width={3} centered>
             <Button icon>
               <Icon name='edit' />
             </Button>
           </Grid.Column>
-          <Grid.Column width={10} centered>
+          <Grid.Column width={10} centered textAlign='center'>
             <Header as='h3' block icon='rocket' content='Feeds List' />
           </Grid.Column>
-          <Grid.Column width={3} centered>
+          <Grid.Column width={3} className="right aligned">
             <Button icon>
               <Icon name='add' />
             </Button>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={3}>
+          <Grid.Column width={3} className="left aligned">
             <Dropdown icon='filter' floating button className='icon'>
               <Dropdown.Menu>
                 <Dropdown.Menu scrolling>
@@ -73,8 +83,15 @@ class FeedsList extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
           </Grid.Column>
-          <Grid.Column width={13}>
-            <Search fluid />
+          <Grid.Column width={13} className="right aligned">
+            <Search fluid className="search-container" />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row stretched>
+          <Grid.Column>
+            {this.props.feedsListItems.map((feedsListItem) => {
+              return <FeedsListItem feedsListItem={feedsListItem} />
+            })}
           </Grid.Column>
         </Grid.Row>
       </Grid>
