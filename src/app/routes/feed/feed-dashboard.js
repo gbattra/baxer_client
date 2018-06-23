@@ -1,3 +1,4 @@
+import './feed.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -10,7 +11,8 @@ import {
 } from 'semantic-ui-react'
 import FeedQueue from './feed-queue'
 import FeedHeader from './feed-header'
-import './feed.scss'
+import FeedControls from './feed-controls'
+
 
 class FeedDashboard extends React.Component {
 
@@ -46,19 +48,18 @@ class FeedDashboard extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row stretched centered>
-                  <Grid.Column width={16}>
-                    <Segment inverted color='blue'></Segment>
+                  <Grid.Column>
+                  <Header as='h3' block textAlign='center'>
+                    {this.props.feedTrack.title}
+                    <Header.Subheader>
+                      {this.props.feedTrack.author}
+                    </Header.Subheader>
+                  </Header>
                   </Grid.Column>
                 </Grid.Row>
-                <Grid.Row columns={6} centered>
+                <Grid.Row stretched>
                   <Grid.Column>
-                    <Segment inverted color='red'></Segment>
-                  </Grid.Column>
-                  <Grid.Column>
-                    <Segment inverted color='red'></Segment>
-                  </Grid.Column>
-                  <Grid.Column>
-                    <Segment inverted color='red'></Segment>
+                    <FeedControls />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
