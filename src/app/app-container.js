@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
 import FeedContainer from './routes/feed/feed-container'
-import PlayerBar from './player-bar/player-bar'
+import PlayerBarContainer from './player-bar/player-bar-container'
 import './app-container.scss'
 
 
@@ -40,9 +40,9 @@ class AppContainer extends React.Component {
             <FeedContainer />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row stretched>
+        <Grid.Row>
           <Grid.Column width={16}>
-            <PlayerBar playingTrack={this.props.playingTrack} />
+            <PlayerBarContainer playingTrack={this.props.playingTrack} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
