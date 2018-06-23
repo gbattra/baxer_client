@@ -23,6 +23,18 @@ var config = {
             test: /\.css$/,
             loader: 'style-loader!css-loader?modules',
             include: /flexboxgrid/
+          },
+          {
+            test: /\.scss$/,
+            use: [
+              {
+                loader: "style-loader"
+              }, {
+                loader: "css-loader"
+              }, {
+                loader: "sass-loader"
+              }
+            ]
           }
       ]
    }

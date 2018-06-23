@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
+import {
+  Grid,
+  Segment,
+  Header,
+  Image
+} from 'semantic-ui-react'
 
 
-class FeedQueueContainer extends React.Component {
-
-  style = {
-    upcomingTrackContainer: {
-      'background': 'purple',
-      'padding': '1em'
-    }
-  }
+class FeedQueue extends React.Component {
 
   static props = {
     upcomingTracks: PropTypes.arrayOf(PropTypes.shape({
@@ -75,17 +73,37 @@ class FeedQueueContainer extends React.Component {
 
   render() {
     return (
-      <Row>
-        {this.props.upcomingTracks.map((track) => {
-          return (
-            <Col sm={12} md={12} style={this.style.upcomingTrackContainer}>
-              {track.title}
-            </Col>
-          )
-        })}
-      </Row>
+      <Grid padded centered>
+        <Grid.Row>
+          <Grid.Column>
+            <Segment.Group>
+              {this.props.upcomingTracks.map((track) => {
+                return (
+                  <Segment>
+                    <Grid verticalAlign='middle'>
+                      <Grid.Row>
+                        <Grid.Column width={2}>
+                          <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+                        </Grid.Column>
+                        <Grid.Column width={14}>
+                          <Header as='h5'>
+                            {track.title}
+                            <Header.Subheader>
+                              {track.author}
+                            </Header.Subheader>
+                          </Header>
+                        </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
+                  </Segment>
+                )
+              })}
+            </Segment.Group>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }
 
-export default FeedQueueContainer
+export default FeedQueue
