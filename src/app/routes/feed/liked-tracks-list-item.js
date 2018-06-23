@@ -50,11 +50,11 @@ class LikedTracksListItem extends React.Component {
             </Grid.Column>
             <Grid.Column width={3} className="center aligned">
               {this.state.isPlaying ? (
-                <Button icon>
+                <Button basic icon>
                   <Icon name='pause'/>
                 </Button>
               ) : (
-                <Button icon>
+                <Button basic icon>
                   <Icon name='play'/>
                 </Button>
               )}

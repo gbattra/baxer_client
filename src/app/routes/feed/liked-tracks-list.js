@@ -85,7 +85,7 @@ class LikedTracksList extends React.Component {
             </Dropdown>
           </Grid.Column>
           <Grid.Column width={13} centered className="right aligned">
-            <Header as='h3' block icon='rocket' content='Liked tracks' />
+            <Header as='h3' block icon='bolt' content='Liked tracks' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

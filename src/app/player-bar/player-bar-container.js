@@ -1,3 +1,4 @@
+import './player-bar.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -8,7 +9,7 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
-import './player-bar.scss'
+import PlayerControls from './player-controls.js'
 
 
 class PlayerBarContainer extends React.Component {
@@ -46,7 +47,7 @@ class PlayerBarContainer extends React.Component {
             </Button>
           </Grid.Column>
           <Grid.Column width={10}>
-
+            <PlayerControls track={this.props.playingTrack}/>
           </Grid.Column>
           <Grid.Column width={3} verticalAlign='middle'>
             <Button basic>

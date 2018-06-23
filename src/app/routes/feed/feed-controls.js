@@ -29,7 +29,7 @@ class FeedControls extends React.Component {
             <div>
               <Popup trigger={
                 <Button content='Like' icon='teal heart' labelPosition='right' />
-              } content="Liking a track sends it to 3 new Rocketyrs." inverted />
+              } content="Liking a track sends it to 3 new Rocketyrs (once it's finished playing)." inverted />
             </div>
           </Grid.Column>
         </Grid.Row>
