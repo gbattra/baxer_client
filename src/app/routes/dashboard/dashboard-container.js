@@ -1,21 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
-import PlaylistsMenuContainer from './feed/playlists-menu/playlists-menu-container'
-import FeedDashboardContainer from './feed/feed-dashboard/feed-dashboard-container'
-import FilterOptionsContainer from './feed/filter-options/filter-options-container'
-import ColumnContent from '../../_components/_column/_column-content'
+import { Grid, Container } from 'semantic-ui-react'
+import FeedDashboardContainer from './feed/feed-dashboard-container'
+import './dashboard-container.scss'
 
 
 class DashboardContainer extends React.Component {
-
-  style = {
-    zeroBuffer: {
-      padding: 0,
-      margin: 0,
-      height: '100%'
-    }
-  }
 
   static props = {
     feedTrack: PropTypes.shape({
@@ -43,24 +33,18 @@ class DashboardContainer extends React.Component {
 
   render() {
     return (
-      <Grid fluid style={this.style.zeroBuffer}>
-        <Row style={this.style.zeroBuffer}>
-          <Col xs={3} md={3} style={this.style.zeroBuffer}>
-            <ColumnContent>
-              <PlaylistsMenuContainer />
-            </ColumnContent>
-          </Col>
-          <Col xs={6} md={6} style={this.style.zeroBuffer}>
-            <ColumnContent>
-              <FeedDashboardContainer feedTrack={this.props.feedTrack} />
-            </ColumnContent>
-          </Col>
-          <Col xs={3} md={3} style={this.style.zeroBuffer}>
-            <ColumnContent>
-              <FilterOptionsContainer />
-            </ColumnContent>
-          </Col>
-        </Row>
+      <Grid columns='three' divided className="dashboard-container">
+        <Grid.Row centered stretched>
+          <Grid.Column width={4}>
+            <Container></Container>
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <FeedDashboardContainer feedTrack={this.props.feedTrack} />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Container></Container>
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     )
   }

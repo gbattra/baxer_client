@@ -1,18 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
+import { Grid, Segment } from 'semantic-ui-react'
+import './player-bar-container.scss'
 
 
 class PlayerBarContainer extends React.Component {
-
-  style = {
-    barContainer: {
-      'height': '5vh',
-      'width': '100vw',
-      'position': 'absolute',
-      'background': 'white'
-    }
-  }
 
   static props = {
     playingTrack: PropTypes.shape({
@@ -36,15 +28,13 @@ class PlayerBarContainer extends React.Component {
 
   render() {
     return (
-      <div style={this.style.barContainer}>
-        <Grid fluid>
-          <Row>
-            <Col sm={12} md={12}>
-              Player
-            </Col>
-          </Row>
-        </Grid>
-      </div>
+      <Grid columns='three' celled='internally' >
+        <Grid.Row centered stretched>
+          <Grid.Column width={3}></Grid.Column>
+          <Grid.Column width={10}></Grid.Column>
+          <Grid.Column width={3}></Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }

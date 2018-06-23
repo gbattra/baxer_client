@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Grid, Segment } from 'semantic-ui-react'
 import DashboardContainer from './routes/dashboard/dashboard-container'
 import PlayerBarContainer from './routes/player-bar/player-bar-container'
+import './app-container.scss'
 
 
 class AppContainer extends React.Component {
-
-  style = {
-    container: {
-      height: '95vh',
-      width: '100vw'
-    }
-  }
 
   static props = {
     playingTrack: PropTypes.shape({
@@ -39,10 +34,18 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <div style={this.style.container}>
-        <DashboardContainer />
-        <PlayerBarContainer playingTrack={this.props.playingTrack}/>
-      </div>
+      <Grid celled='internally' className='app-container'>
+        <Grid.Row stretched>
+          <Grid.Column width={16}>
+            <DashboardContainer />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row stretched>
+          <Grid.Column width={16}>
+            <PlayerBarContainer playingTrack={this.props.playingTrack} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }
