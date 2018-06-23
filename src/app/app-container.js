@@ -36,7 +36,7 @@ class AppContainer extends React.Component {
     return (
       <Grid celled='internally' className='app-container'>
         <Grid.Row stretched>
-          <Grid.Column width={16}>
+          <Grid.Column width={16} className='dashboard-container'>
             <FeedContainer />
           </Grid.Column>
         </Grid.Row>

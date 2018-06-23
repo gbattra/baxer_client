@@ -36,7 +36,7 @@ class FeedDashboard extends React.Component {
             <FeedHeader label='My First Feed' imageUrl='https://react.semantic-ui.com/assets/images/avatar/large/patrick.png' />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row centered className='feed-dashboard-container'>
+        <Grid.Row centered>
           <Grid.Column width={13}>
             <Grid.Row>
               <Grid padded centered>

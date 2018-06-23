@@ -5,7 +5,8 @@ import {
   Container,
   Segment,
   Header,
-  Image
+  Image,
+  Icon
 } from 'semantic-ui-react'
 
 
@@ -29,7 +30,7 @@ class FeedsListItem extends React.Component {
   render() {
     return (
       <Segment color={this.props.feedsListItem.color}>
-        <Grid>
+        <Grid verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={13}>
               <Header as='h4'>
@@ -37,9 +38,9 @@ class FeedsListItem extends React.Component {
                 {this.props.feedsListItem.name}
               </Header>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column width={3} className="right aligned">
               {this.state.isSelected ? (
-                  <div>Check</div>
+                  <Icon name='selected radio' size='large'/>
               ) : null}
             </Grid.Column>
           </Grid.Row>
