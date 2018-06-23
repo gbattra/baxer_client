@@ -1,7 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Container, Segment, Image } from 'semantic-ui-react'
+import {
+  Grid,
+  Container,
+  Segment,
+  Image,
+  Header,
+  Icon
+} from 'semantic-ui-react'
 import FeedQueue from './feed-queue'
+import FeedHeader from './feed-header'
 import './feed.scss'
 
 class FeedDashboard extends React.Component {
@@ -23,6 +31,11 @@ class FeedDashboard extends React.Component {
   render() {
     return (
       <Grid padded>
+        <Grid.Row stretched centered>
+          <Grid.Column>
+            <FeedHeader label='My First Feed' imageUrl='https://react.semantic-ui.com/assets/images/avatar/large/patrick.png' />
+          </Grid.Column>
+        </Grid.Row>
         <Grid.Row centered className='feed-dashboard-container'>
           <Grid.Column width={13}>
             <Grid.Row>
