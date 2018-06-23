@@ -1,16 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
+import { Grid, Segment } from 'semantic-ui-react'
 
 
-class FeedQueueContainer extends React.Component {
-
-  style = {
-    upcomingTrackContainer: {
-      'background': 'purple',
-      'padding': '1em'
-    }
-  }
+class FeedQueue extends React.Component {
 
   static props = {
     upcomingTracks: PropTypes.arrayOf(PropTypes.shape({
@@ -75,17 +68,21 @@ class FeedQueueContainer extends React.Component {
 
   render() {
     return (
-      <Row>
+      <div>
         {this.props.upcomingTracks.map((track) => {
           return (
-            <Col sm={12} md={12} style={this.style.upcomingTrackContainer}>
-              {track.title}
-            </Col>
+            <Grid padded centered>
+              <Grid.Row>
+                <Grid.Column>
+                  <Segment></Segment>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           )
         })}
-      </Row>
+      </div>
     )
   }
 }
 
-export default FeedQueueContainer
+export default FeedQueue

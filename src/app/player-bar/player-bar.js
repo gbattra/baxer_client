@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
-import './player-bar-container.scss'
+import './player-bar.scss'
 
 
-class PlayerBarContainer extends React.Component {
+class PlayerBar extends React.Component {
 
   static props = {
     playingTrack: PropTypes.shape({
@@ -39,4 +39,4 @@ class PlayerBarContainer extends React.Component {
   }
 }
 
-export default PlayerBarContainer
+export default PlayerBar

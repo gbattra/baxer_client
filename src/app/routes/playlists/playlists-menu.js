@@ -4,7 +4,7 @@ import {Grid, Row, Col} from 'react-flexbox-grid'
 import PlaylistsMenuOption from './playlists-menu-option'
 
 
-class PlaylistsMenuContainer extends React.Component {
+class PlaylistsMenu extends React.Component {
 
   style = {
     playlistsMenuContainer: {
@@ -88,4 +88,4 @@ class PlaylistsMenuContainer extends React.Component {
   }
 }
 
-export default PlaylistsMenuContainer
+export default PlaylistsMenu

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
-import DashboardContainer from './routes/dashboard/dashboard-container'
-import PlayerBarContainer from './routes/player-bar/player-bar-container'
+import FeedContainer from './routes/feed/feed-container'
+import PlayerBar from './player-bar/player-bar'
 import './app-container.scss'
 
 
@@ -37,12 +37,12 @@ class AppContainer extends React.Component {
       <Grid celled='internally' className='app-container'>
         <Grid.Row stretched>
           <Grid.Column width={16}>
-            <DashboardContainer />
+            <FeedContainer />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row stretched>
           <Grid.Column width={16}>
-            <PlayerBarContainer playingTrack={this.props.playingTrack} />
+            <PlayerBar playingTrack={this.props.playingTrack} />
           </Grid.Column>
         </Grid.Row>
       </Grid>

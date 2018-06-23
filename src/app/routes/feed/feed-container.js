@@ -1,12 +1,10 @@
 import React from 'react'
+import { Grid, Segment, Container } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
-import { Grid, Container } from 'semantic-ui-react'
-import FeedDashboardContainer from './feed/feed-dashboard-container'
-import './dashboard-container.scss'
+import FeedDashboard from './feed-dashboard'
 
 
-class DashboardContainer extends React.Component {
-
+class FeedContainer extends React.Component {
   static props = {
     feedTrack: PropTypes.shape({
       id: PropTypes.int,
@@ -33,13 +31,15 @@ class DashboardContainer extends React.Component {
 
   render() {
     return (
-      <Grid columns='three' divided className="dashboard-container">
+      <Grid columns={3} divided className="feed-container">
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container></Container>
           </Grid.Column>
           <Grid.Column width={8}>
-            <FeedDashboardContainer feedTrack={this.props.feedTrack} />
+            <Container>
+              <FeedDashboard feedTrack={this.props.feedTrack} />
+            </Container>
           </Grid.Column>
           <Grid.Column width={4}>
             <Container></Container>
@@ -50,4 +50,4 @@ class DashboardContainer extends React.Component {
   }
 }
 
-export default DashboardContainer
+export default FeedContainer
