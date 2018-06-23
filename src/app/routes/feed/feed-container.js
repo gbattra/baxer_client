@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Segment, Container } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import FeedDashboard from './feed-dashboard'
+import FeedsList from './feeds-list'
 
 
 class FeedContainer extends React.Component {
@@ -34,7 +35,9 @@ class FeedContainer extends React.Component {
       <Grid columns={3} divided className="feed-container">
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
-            <Container></Container>
+            <Container className="feed-lists-container">
+              <FeedsList />
+            </Container>
           </Grid.Column>
           <Grid.Column width={8}>
             <Container>
