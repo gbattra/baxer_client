@@ -9,8 +9,8 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
 import PlayerControls from './player-controls.js'
+import NavButton from './nav-button'
 
 
 class PlayerBarContainer extends React.Component {
@@ -22,17 +22,42 @@ class PlayerBarContainer extends React.Component {
       author: PropTypes.string,
       runtime: PropTypes.int,
       album_art_url: PropTypes.string
-    }).isRequired
+    }).isRequired,
+    currentRoute: PropTypes.string,
+    leftNavRoute: PropTypes.string,
+    rightNavRoute: PropTypes.string
   }
 
-  static state = {
+  state = {
     isPlaying: false,
     currentTrack: null,
-    nextQueue: []
+    nextQueue: [],
+    currentRoute: {
+      label: 'feed',
+      image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
+    },
+    leftNavRoute: {
+      label: 'profile',
+      image: 'https://react.semantic-ui.com/assets/images/avatar/small/molly.png'
+    },
+    rightNavRoute: {
+      label: 'playlists',
+      image: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg'
+    }
   }
 
   constructor(props, defaultProps) {
-    super(props, defaultProps);
+    super(props, defaultProps)
+  }
+
+  navButtonClicked = (side, route) => {
+    const sideNavRoute = side === 'left' ? 'leftNavRoute' : 'rightNavRoute'
+    this.setState((prevState) => {
+      return {
+        [sideNavRoute]: prevState.currentRoute,
+        currentRoute: route
+      }
+    })
   }
 
   render() {
@@ -40,27 +65,13 @@ class PlayerBarContainer extends React.Component {
       <Grid columns='three' divided>
         <Grid.Row centered stretched>
           <Grid.Column width={3} verticalAlign='middle'>
-            <Link to='/profile'>
-              <Button basic>
-                <Header as='h4'>
-                  <Image circular src='https://react.semantic-ui.com/assets/images/avatar/small/molly.png' />
-                  Profile
-                </Header>
-              </Button>
-            </Link>
+            <NavButton side='left' route={this.state.leftNavRoute} onClickFunc={this.navButtonClicked}/>
           </Grid.Column>
           <Grid.Column width={10}>
             <PlayerControls track={this.props.playingTrack}/>
           </Grid.Column>
           <Grid.Column width={3} verticalAlign='middle'>
-            <Link to='/playlists'>
-              <Button basic>
-                <Header as='h4'>
-                  <Image circular src='https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg' />
-                  Playlists
-                </Header>
-              </Button>
-            </Link>
+            <NavButton side='right' route={this.state.rightNavRoute} onClickFunc={this.navButtonClicked}/>
           </Grid.Column>
         </Grid.Row>
       </Grid>
