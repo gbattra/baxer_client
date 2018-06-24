@@ -1,24 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
+import {
+  Grid,
+  Header,
+  Search,
+  Icon,
+  Button
+} from 'semantic-ui-react'
 import PlaylistsMenuOption from './playlists-menu-option'
 
 
 class PlaylistsMenu extends React.Component {
-
-  style = {
-    playlistsMenuContainer: {
-      'height': '100%',
-      'background': 'gray'
-    },
-    playlistActionBarItem: {
-      'padding': '1em',
-      'text-align': 'center'
-    },
-    searchBarContainer: {
-      'padding': '1em'
-    }
-  }
 
   static props = {
     playlists: PropTypes.arrayOf(PropTypes.shape({
@@ -37,21 +29,27 @@ class PlaylistsMenu extends React.Component {
         name: 'My First Playlist',
         trackCount: 14,
         runtime: 180,
-        playlistArtUrl: ''
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'teal',
+        isSelected: true,
       },
       {
         id: 1,
         name: 'My First Playlist',
         trackCount: 14,
         runtime: 180,
-        playlistArtUrl: ''
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'purple',
+        isSelected: false,
       },
       {
         id: 1,
         name: 'My First Playlist',
         trackCount: 14,
         runtime: 180,
-        playlistArtUrl: ''
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'olive',
+        isSelected: false,
       }
     ]
   }
@@ -61,28 +59,39 @@ class PlaylistsMenu extends React.Component {
   }
 
   changePlaylist = (playlist) => {
+
   }
 
   render() {
     return (
-      <Grid style={this.style.playlistsMenuContainer}>
-        <Row style={{'background':'purple'}}>
-          <Col sm={3} md={2} style={this.style.playlistActionBarItem} >Edit</Col>
-          <Col sm={6} md={8} style={this.style.playlistActionBarItem} >Playlists</Col>
-          <Col sm={3} md={2} style={this.style.playlistActionBarItem} >Add</Col>
-        </Row>
-        <Row style={{'background': 'pink'}}>
-          <Col sm={12} md={12} style={this.style.searchBarContainer} >Search</Col>
-        </Row>
-        <Row style={{'background': 'yellow', 'padding':'0.5em'}}>
-          {this.props.playlists.map((playlist) => {
-            return (
-              <Col sm={12} md={12}>
-                <PlaylistsMenuOption playlist={playlist} />
-              </Col>
-            )
-          })}
-        </Row>
+      <Grid padded>
+        <Grid.Row verticalAlign='middle' className="left aligned">
+          <Grid.Column width={3} centered>
+            <Button icon>
+              <Icon name='edit' />
+            </Button>
+          </Grid.Column>
+          <Grid.Column width={10} centered textAlign='center'>
+            <Header as='h3' block icon='headphones' content='Playlists' />
+          </Grid.Column>
+          <Grid.Column width={3} className="right aligned">
+            <Button icon>
+              <Icon name='add' />
+            </Button>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={16} className="right aligned">
+            <Search fluid className="search-container" />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row stretched>
+          <Grid.Column>
+            {this.props.playlists.map((playlist) => {
+              return <PlaylistsMenuOption playlist={playlist} />
+            })}
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     )
   }

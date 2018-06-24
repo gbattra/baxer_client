@@ -5,7 +5,6 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
 
 
 class NavButton extends React.Component {
@@ -29,14 +28,12 @@ class NavButton extends React.Component {
 
   render() {
     return (
-      <Link to={this.props.route.label} className='fw'>
-        <Button basic className='fw' onClick={this.onButtonClick}>
-          <Header as='h4' style={{'text-transform':'capitalize'}}>
-            <Image circular src={this.props.route.image}/>
-            {this.props.route.label}
-          </Header>
-        </Button>
-      </Link>
+      <Button basic className='fw' onClick={this.onButtonClick}>
+        <Header as='h4' style={{'text-transform':'capitalize'}}>
+          <Image circular src={this.props.route.image}/>
+          {this.props.route.label}
+        </Header>
+      </Button>
     )
   }
 }

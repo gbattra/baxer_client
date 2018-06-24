@@ -2,6 +2,7 @@ import './playlists.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment, Container } from 'semantic-ui-react'
+import PlaylistsMenu from './playlists-menu'
 
 
 class PlaylistsContainer extends React.Component {
@@ -12,6 +13,7 @@ class PlaylistsContainer extends React.Component {
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container>
+              <PlaylistsMenu />
             </Container>
           </Grid.Column>
           <Grid.Column width={8}>

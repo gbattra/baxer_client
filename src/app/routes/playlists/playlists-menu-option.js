@@ -1,18 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Grid, Row, Col} from 'react-flexbox-grid'
+import {
+  Grid,
+  Header,
+  Segment,
+  Image,
+  Icon
+} from 'semantic-ui-react'
 
 
 class PlaylistsMenuOption extends React.Component {
-
-  style = {
-    playlistArtContainer: {
-      'background': 'black',
-      'height': '0px',
-      'padding-bottom': '70%',
-      'width': '70%'
-    }
-  }
 
   static props = {
     playlist: PropTypes.shape({
@@ -20,32 +17,39 @@ class PlaylistsMenuOption extends React.Component {
       name: PropTypes.string,
       trackCount: PropTypes.int,
       runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string
+      playlistArtUrl: PropTypes.string,
+      color: PropTypes.string,
+      isSelected: PropTypes.bool
     }).isRequired
   }
 
+  state = {
+    isSelected: this.props.playlist.isSelected
+  }
+
   constructor(props, defaultProps) {
-    super(props, defaultProps);
+    super(props, defaultProps)
   }
 
   render() {
     return (
-      <Row middle="xs" style={{'background': 'blue', 'padding': '0.5em', 'margin':'0.25em 0'}}>
-        <Col sm={3} md={2} style={{'padding': '0'}}>
-          <div style={this.style.playlistArtContainer}>
-            {this.props.playlist.playlistArtUrl}
-          </div>
-        </Col>
-        <Col sm={9} md={10}>
-          <Row>
-            <Col sm={12} md={12} style={{'padding':'0.25em'}} >{this.props.playlist.name}</Col>
-          </Row>
-          <Row>
-            <Col sm={3} md={3} style={{'padding':'0.25em'}} >{this.props.playlist.trackCount}</Col>
-            <Col sm={3} md={3} style={{'padding':'0.25em'}} >{this.props.playlist.runtime}</Col>
-          </Row>
-        </Col>
-      </Row>
+      <Segment color={this.props.playlist.color}>
+        <Grid verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column width={13}>
+              <Header as='h4'>
+                <Image circular src={this.props.playlist.playlistArtUrl} />
+                {this.props.playlist.name}
+              </Header>
+            </Grid.Column>
+            <Grid.Column width={3} className="right aligned">
+              {this.state.isSelected ? (
+                  <Icon name='selected radio' size='large'/>
+              ) : null}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
     )
   }
 

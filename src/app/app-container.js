@@ -1,10 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route
-} from 'react-router-dom'
 import { Grid, Segment } from 'semantic-ui-react'
 import FeedContainer from './routes/feed/feed-container'
 import PlayerBarContainer from './player-bar/player-bar-container'
@@ -35,21 +30,32 @@ class AppContainer extends React.Component {
   }
 
   state = {
-    dashboard: 'playlists'
+    dashboard: {
+      label: 'playlists',
+      image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
+    }
   }
 
   constructor(props, defaultProps) {
     super(props, defaultProps);
   }
 
-  getDashboardComponent() {
-    if (this.state.dashboard === 'feed') {
+  updateRouteState = (route) => {
+    this.setState({
+      dashboard: route
+    })
+  }
+
+  getDashboardComponent = () => {
+    if (this.state.dashboard.label === 'feed') {
       return (
         <FeedContainer />
       )
-    } else if (this.state.dashboard === 'profile') {
-
-    } else if (this.state.dashboard === 'playlists') {
+    } else if (this.state.dashboard.label === 'profile') {
+      return (
+        <div>Profile</div>
+      )
+    } else if (this.state.dashboard.label === 'playlists') {
       return (
         <PlaylistsContainer />
       )
@@ -58,20 +64,18 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Grid celled='internally' className='app-container'>
-          <Grid.Row stretched>
-            <Grid.Column width={16} className='dashboard-container'>
-              {this.getDashboardComponent()}
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={16}>
-              <PlayerBarContainer playingTrack={this.props.playingTrack} />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Router>
+      <Grid celled='internally' className='app-container'>
+        <Grid.Row stretched>
+          <Grid.Column width={16} className='dashboard-container'>
+            {this.getDashboardComponent()}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <PlayerBarContainer playingTrack={this.props.playingTrack} updateRouteState={this.updateRouteState} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }

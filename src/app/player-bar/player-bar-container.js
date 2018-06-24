@@ -25,7 +25,8 @@ class PlayerBarContainer extends React.Component {
     }).isRequired,
     currentRoute: PropTypes.string,
     leftNavRoute: PropTypes.string,
-    rightNavRoute: PropTypes.string
+    rightNavRoute: PropTypes.string,
+    updateRouteState: PropTypes.func.isRequired
   }
 
   state = {
@@ -58,6 +59,7 @@ class PlayerBarContainer extends React.Component {
         currentRoute: route
       }
     })
+    this.props.updateRouteState(route)
   }
 
   render() {
