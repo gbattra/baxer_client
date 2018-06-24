@@ -16,7 +16,16 @@ class AppContainer extends React.Component {
       author: PropTypes.string,
       runtime: PropTypes.int,
       album_art_url: PropTypes.string
-    })
+    }),
+    playlists: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.int,
+      name: PropTypes.string,
+      trackCount: PropTypes.int,
+      runtime: PropTypes.int,
+      playlistArtUrl: PropTypes.string,
+      color: PropTypes.string,
+      isSelected: PropTypes.bool
+    }))
   }
 
   static defaultProps = {
@@ -26,7 +35,36 @@ class AppContainer extends React.Component {
       author: 'Overwerk',
       runtime: 120,
       album_art_url: ''
-    }
+    },
+    playlists: [
+      {
+        id: 1,
+        name: 'My First Playlist',
+        trackCount: 14,
+        runtime: 180,
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'teal',
+        isSelected: true,
+      },
+      {
+        id: 1,
+        name: 'My First Playlist',
+        trackCount: 14,
+        runtime: 180,
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'purple',
+        isSelected: false,
+      },
+      {
+        id: 1,
+        name: 'My First Playlist',
+        trackCount: 14,
+        runtime: 180,
+        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        color: 'olive',
+        isSelected: false,
+      }
+    ]
   }
 
   state = {
@@ -57,7 +95,7 @@ class AppContainer extends React.Component {
       )
     } else if (this.state.dashboard.label === 'playlists') {
       return (
-        <PlaylistsContainer />
+        <PlaylistsContainer playlists={this.props.playlists}/>
       )
     }
   }

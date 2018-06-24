@@ -19,39 +19,7 @@ class PlaylistsMenu extends React.Component {
       trackCount: PropTypes.int,
       runtime: PropTypes.int,
       playlistArtUrl: PropTypes.string
-    }))
-  }
-
-  static defaultProps = {
-    playlists: [
-      {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
-        color: 'teal',
-        isSelected: true,
-      },
-      {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
-        color: 'purple',
-        isSelected: false,
-      },
-      {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
-        color: 'olive',
-        isSelected: false,
-      }
-    ]
+    })).isRequired
   }
 
   constructor(props, defaultProps) {
