@@ -34,7 +34,7 @@ class PlaylistInfo extends React.Component {
       <Grid padded>
         <Grid.Row>
           <Grid.Column>
-            <Card centered>
+            <Card centered color={this.props.playlist.color}>
               <Image src={this.props.playlist.playlistArtUrl} />
               <Card.Content textAlign='center'>
                 <Card.Header>{this.props.playlist.name}</Card.Header>

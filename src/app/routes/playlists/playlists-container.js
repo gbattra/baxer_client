@@ -17,7 +17,15 @@ class PlaylistsContainer extends React.Component {
       runtime: PropTypes.int,
       playlistArtUrl: PropTypes.string,
       color: PropTypes.string,
-      isSelected: PropTypes.bool
+      isSelected: PropTypes.bool,
+      tracks: PropTypes.arrayOf({
+        id: PropTypes.int,
+        title: PropTypes.string,
+        author: PropTypes.string,
+        runtime: PropTypes.int,
+        album_art_url: PropTypes.string,
+        isPlaying: PropTypes.bool
+      })
     }),
     playlists: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.int,
@@ -26,7 +34,15 @@ class PlaylistsContainer extends React.Component {
       runtime: PropTypes.int,
       playlistArtUrl: PropTypes.string,
       color: PropTypes.string,
-      isSelected: PropTypes.bool
+      isSelected: PropTypes.bool,
+      tracks: PropTypes.arrayOf({
+        id: PropTypes.int,
+        title: PropTypes.string,
+        author: PropTypes.string,
+        runtime: PropTypes.int,
+        album_art_url: PropTypes.string,
+        isPlaying: PropTypes.bool
+      })
     })).isRequired
   }
 
@@ -49,7 +65,7 @@ class PlaylistsContainer extends React.Component {
           </Grid.Column>
           <Grid.Column width={8}>
             <Container>
-              <PlaylistsDashboard />
+              <PlaylistsDashboard playlist={this.props.activePlaylist}/>
             </Container>
           </Grid.Column>
           <Grid.Column width={4}>
