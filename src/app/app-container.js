@@ -4,6 +4,7 @@ import { Grid, Segment } from 'semantic-ui-react'
 import FeedContainer from './routes/feed/feed-container'
 import PlayerBarContainer from './player-bar/player-bar-container'
 import PlaylistsContainer from './routes/playlists/playlists-container'
+import ProfileContainer from './routes/profile/profile-container'
 import './app-container.scss'
 
 const ROUTES = {
@@ -74,8 +75,8 @@ class AppContainer extends React.Component {
   }
 
   state = {
-    currentRoute: this.props.allRoutes[ROUTES.FEED],
-    leftNavRoute: this.props.allRoutes[ROUTES.PROFILE],
+    currentRoute: this.props.allRoutes[ROUTES.PROFILE],
+    leftNavRoute: this.props.allRoutes[ROUTES.FEED],
     rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
   }
 
@@ -100,7 +101,7 @@ class AppContainer extends React.Component {
       )
     } else if (this.state.currentRoute.label === 'profile') {
       return (
-        <div>Profile</div>
+        <ProfileContainer />
       )
     } else if (this.state.currentRoute.label === 'playlists') {
       return (
