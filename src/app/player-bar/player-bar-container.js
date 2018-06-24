@@ -23,43 +23,32 @@ class PlayerBarContainer extends React.Component {
       runtime: PropTypes.int,
       album_art_url: PropTypes.string
     }).isRequired,
-    currentRoute: PropTypes.string,
-    leftNavRoute: PropTypes.string,
-    rightNavRoute: PropTypes.string,
+    leftNavRoute: PropTypes.shape({
+      label: PropTypes.string,
+      image: PropTypes.string,
+    }),
+    rightNavRoute: PropTypes.shape({
+      label: PropTypes.string,
+      image: PropTypes.string,
+    }),
     updateRouteState: PropTypes.func.isRequired
   }
-
   state = {
     isPlaying: false,
     currentTrack: null,
-    nextQueue: [],
-    currentRoute: {
-      label: 'feed',
-      image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
-    },
-    leftNavRoute: {
-      label: 'profile',
-      image: 'https://react.semantic-ui.com/assets/images/avatar/small/molly.png'
-    },
-    rightNavRoute: {
-      label: 'playlists',
-      image: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg'
-    }
+    nextQueue: []
   }
 
   constructor(props, defaultProps) {
     super(props, defaultProps)
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
+  }
+
   navButtonClicked = (side, route) => {
-    const sideNavRoute = side === 'left' ? 'leftNavRoute' : 'rightNavRoute'
-    this.setState((prevState) => {
-      return {
-        [sideNavRoute]: prevState.currentRoute,
-        currentRoute: route
-      }
-    })
-    this.props.updateRouteState(route)
+    this.props.updateRouteState(side, route)
   }
 
   render() {
@@ -67,13 +56,13 @@ class PlayerBarContainer extends React.Component {
       <Grid columns='three' divided>
         <Grid.Row centered stretched>
           <Grid.Column width={3} verticalAlign='middle'>
-            <NavButton side='left' route={this.state.leftNavRoute} onClickFunc={this.navButtonClicked}/>
+            <NavButton side='left' route={this.props.leftNavRoute} onClickFunc={this.navButtonClicked}/>
           </Grid.Column>
           <Grid.Column width={10}>
             <PlayerControls track={this.props.playingTrack}/>
           </Grid.Column>
           <Grid.Column width={3} verticalAlign='middle'>
-            <NavButton side='right' route={this.state.rightNavRoute} onClickFunc={this.navButtonClicked}/>
+            <NavButton side='right' route={this.props.rightNavRoute} onClickFunc={this.navButtonClicked}/>
           </Grid.Column>
         </Grid.Row>
       </Grid>

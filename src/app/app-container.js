@@ -6,6 +6,12 @@ import PlayerBarContainer from './player-bar/player-bar-container'
 import PlaylistsContainer from './routes/playlists/playlists-container'
 import './app-container.scss'
 
+const ROUTES = {
+  PROFILE: 0,
+  PLAYLISTS: 1,
+  FEED: 2
+}
+
 
 class AppContainer extends React.Component {
 
@@ -25,7 +31,11 @@ class AppContainer extends React.Component {
       playlistArtUrl: PropTypes.string,
       color: PropTypes.string,
       isSelected: PropTypes.bool
-    }))
+    })),
+    allRoutes: PropTypes.shape({
+      label: PropTypes.string,
+      image: PropTypes.string
+    })
   }
 
   static defaultProps = {
@@ -45,55 +55,54 @@ class AppContainer extends React.Component {
         playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
         color: 'teal',
         isSelected: true,
+      }
+    ],
+    allRoutes: [
+      {
+        label: 'profile',
+        image: 'https://react.semantic-ui.com/assets/images/avatar/small/molly.png'
       },
       {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
-        color: 'purple',
-        isSelected: false,
+        label: 'playlists',
+        image: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg'
       },
       {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
-        color: 'olive',
-        isSelected: false,
+        label: 'feed',
+        image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
       }
     ]
   }
 
   state = {
-    dashboard: {
-      label: 'playlists',
-      image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
-    }
+    currentRoute: this.props.allRoutes[ROUTES.FEED],
+    leftNavRoute: this.props.allRoutes[ROUTES.PROFILE],
+    rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
   }
 
   constructor(props, defaultProps) {
     super(props, defaultProps);
   }
 
-  updateRouteState = (route) => {
-    this.setState({
-      dashboard: route
+  updateRouteState = (side, route) => {
+    const sideNavRoute = side === 'left' ? 'leftNavRoute' : 'rightNavRoute'
+    this.setState((prevState) => {
+      return {
+        [sideNavRoute]: prevState.currentRoute,
+        currentRoute: route
+      }
     })
   }
 
   getDashboardComponent = () => {
-    if (this.state.dashboard.label === 'feed') {
+    if (this.state.currentRoute.label === 'feed') {
       return (
         <FeedContainer />
       )
-    } else if (this.state.dashboard.label === 'profile') {
+    } else if (this.state.currentRoute.label === 'profile') {
       return (
         <div>Profile</div>
       )
-    } else if (this.state.dashboard.label === 'playlists') {
+    } else if (this.state.currentRoute.label === 'playlists') {
       return (
         <PlaylistsContainer playlists={this.props.playlists}/>
       )
@@ -110,7 +119,12 @@ class AppContainer extends React.Component {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={16}>
-            <PlayerBarContainer playingTrack={this.props.playingTrack} updateRouteState={this.updateRouteState} />
+            <PlayerBarContainer
+              playingTrack={this.props.playingTrack}
+              updateRouteState={this.updateRouteState}
+              leftNavRoute={this.state.leftNavRoute}
+              rightNavRoute={this.state.rightNavRoute}
+            />
           </Grid.Column>
         </Grid.Row>
       </Grid>
