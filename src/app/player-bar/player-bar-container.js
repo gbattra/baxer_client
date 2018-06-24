@@ -9,6 +9,7 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import PlayerControls from './player-controls.js'
 
 
@@ -39,23 +40,27 @@ class PlayerBarContainer extends React.Component {
       <Grid columns='three' divided>
         <Grid.Row centered stretched>
           <Grid.Column width={3} verticalAlign='middle'>
-            <Button basic>
-              <Header as='h4'>
-                <Image circular src='https://react.semantic-ui.com/assets/images/avatar/small/molly.png' />
-                Profile
-              </Header>
-            </Button>
+            <Link to='/profile'>
+              <Button basic>
+                <Header as='h4'>
+                  <Image circular src='https://react.semantic-ui.com/assets/images/avatar/small/molly.png' />
+                  Profile
+                </Header>
+              </Button>
+            </Link>
           </Grid.Column>
           <Grid.Column width={10}>
             <PlayerControls track={this.props.playingTrack}/>
           </Grid.Column>
           <Grid.Column width={3} verticalAlign='middle'>
-            <Button basic>
-              <Header as='h4'>
-                <Image circular src='https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg' />
-                Playlists
-              </Header>
-            </Button>
+            <Link to='/playlists'>
+              <Button basic>
+                <Header as='h4'>
+                  <Image circular src='https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg' />
+                  Playlists
+                </Header>
+              </Button>
+            </Link>
           </Grid.Column>
         </Grid.Row>
       </Grid>
