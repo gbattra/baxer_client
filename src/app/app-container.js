@@ -36,10 +36,48 @@ class AppContainer extends React.Component {
     allRoutes: PropTypes.shape({
       label: PropTypes.string,
       image: PropTypes.string
+    }),
+    profile: PropTypes.shape({
+      id: PropTypes.int,
+      color: PropTypes.string,
+      profileImageUrl: PropTypes.string,
+      name: PropTypes.string,
+      description: PropTypes.string,
+      dateJoined: PropTypes.string,
+      location: PropTypes.string,
+      badges: PropTypes.arrayOf(PropTypes.shape({
+        color: PropTypes.string,
+        image: PropTypes.string,
+        label: PropTypes.string,
+        value: PropTypes.string
+      }))
     })
   }
 
   static defaultProps = {
+    profile: {
+      id: 1,
+      color: 'teal',
+      profileImageUrl: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg',
+      name: 'Broderick Attra',
+      description: 'I make waves of air pulse through your earholes in appealing ways',
+      dateJoined: 'June, 2018',
+      location: 'Boston, MA',
+      badges: [
+        {
+          color: 'teal',
+          image: 'https://react.semantic-ui.com/assets/images/avatar/small/joe.jpg',
+          label: 'Location',
+          value: 'Boston, MA'
+        },
+        {
+          color: 'purple',
+          image: 'https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg',
+          label: 'Joined',
+          value: 'June, 2018'
+        }
+      ]
+    },
     playingTrack: {
       id: 1,
       title: 'Create',
@@ -101,7 +139,7 @@ class AppContainer extends React.Component {
       )
     } else if (this.state.currentRoute.label === 'profile') {
       return (
-        <ProfileContainer />
+        <ProfileContainer profile={this.props.profile}/>
       )
     } else if (this.state.currentRoute.label === 'playlists') {
       return (

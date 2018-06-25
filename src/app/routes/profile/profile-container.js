@@ -6,9 +6,34 @@ import {
   Container,
   Button
 } from 'semantic-ui-react'
+import ProfileDashboard from './profile-dashboard'
+import ProfileInfo from './profile-info'
+import ProfileNavigationMenu from './profile-navigation-menu'
 
 
 class ProfileContainer extends React.Component {
+
+  static props = {
+    profile: PropTypes.shape({
+      id: PropTypes.int,
+      color: PropTypes.string,
+      profileImageUrl: PropTypes.string,
+      name: PropTypes.string,
+      description: PropTypes.string,
+      dateJoined: PropTypes.string,
+      location: PropTypes.string,
+      badges: PropTypes.arrayOf(PropTypes.shape({
+        color: PropTypes.string,
+        image: PropTypes.string,
+        label: PropTypes.string,
+        value: PropTypes.string
+      }))
+    }).isRequired
+  }
+
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     return (
@@ -16,14 +41,17 @@ class ProfileContainer extends React.Component {
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container>
+              <ProfileInfo profile={this.props.profile}/>
             </Container>
           </Grid.Column>
           <Grid.Column width={8}>
             <Container>
+              <ProfileDashboard />
             </Container>
           </Grid.Column>
           <Grid.Column width={4}>
             <Container>
+              <ProfileNavigationMenu />
             </Container>
           </Grid.Column>
         </Grid.Row>
