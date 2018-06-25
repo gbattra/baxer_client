@@ -8,7 +8,7 @@ import {
 } from 'semantic-ui-react'
 import ProfileDashboard from './profile-dashboard'
 import ProfileInfo from './profile-info'
-import ProfileNavigationMenu from './profile-navigation-menu'
+import ProfileBadgeList from './profile-badges-list'
 
 
 class ProfileContainer extends React.Component {
@@ -25,6 +25,7 @@ class ProfileContainer extends React.Component {
       badges: PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
         image: PropTypes.string,
+        label: PropTypes.string,
         description: PropTypes.string,
         value: PropTypes.string
       }))
@@ -51,7 +52,7 @@ class ProfileContainer extends React.Component {
           </Grid.Column>
           <Grid.Column width={4}>
             <Container>
-              <ProfileNavigationMenu />
+              <ProfileBadgeList badges={this.props.profile.badges} />
             </Container>
           </Grid.Column>
         </Grid.Row>

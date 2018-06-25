@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Grid,
-  Button,
-  Segment,
-  Image,
   Header,
   Icon,
   Popup
@@ -19,6 +16,7 @@ class ProfileBadgesList extends React.Component {
       color: PropTypes.string,
       image: PropTypes.string,
       label: PropTypes.string,
+      description: PropTypes.string,
       value: PropTypes.string
     })).isRequired
   }
@@ -29,29 +27,23 @@ class ProfileBadgesList extends React.Component {
 
   render() {
     return (
-      <Grid padded columns='equal'>
-        <Grid.Row>
-          <Grid.Column centered>
-            <Popup inverted trigger = {
-              <Header block as='h3' centered>
-                <Icon name='certificate' />
-                Badges
-              </Header>
-            } content = {
-              'There are many ways to unlock badges, such as uploading your own music or listening to new tracks in your feed. Explore the app to discover them all.'
-            } />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
+      <div style={{'padding':'1em'}}>
+        <Popup inverted trigger = {
+          <Header block as='h3'>
+            <Icon name='certificate' />
+            Badges
+          </Header>
+        } content={
+          'There are many ways to unlock badges, such as uploading your own music or listening to new tracks in your feed. Explore the app to discover them all.'
+        } />
+        <Grid padded>
           {this.props.badges.map((badge) => {
             return (
-              <Grid.Column width={8}>
-                <ProfileBadge badge={badge} />
-              </Grid.Column>
+              <ProfileBadge badge={badge} />
             )
           })}
-        </Grid.Row>
-      </Grid>
+        </Grid>
+      </div>
     )
   }
 }

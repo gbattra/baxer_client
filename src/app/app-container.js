@@ -48,6 +48,7 @@ class AppContainer extends React.Component {
       badges: PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
         image: PropTypes.string,
+        label: PropTypes.string,
         description: PropTypes.string,
         value: PropTypes.string
       }))
@@ -66,15 +67,31 @@ class AppContainer extends React.Component {
       badges: [
         {
           color: 'teal',
-          image: 'https://react.semantic-ui.com/assets/images/avatar/small/joe.jpg',
-          description: 'Location',
+          icon: 'map',
+          label: 'Location',
+          description: 'Where ahh you??',
           value: 'Boston, MA'
         },
         {
           color: 'purple',
-          image: 'https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg',
-          description: 'Date joined',
+          icon: 'calendar',
+          label: 'Date Joined',
+          description: 'Never forget your Rocketyr birthday',
           value: 'June, 2018'
+        },
+        {
+          color: 'black',
+          icon: 'rocket',
+          label: 'Rocketyr Rank',
+          description: 'The higher the rank, the better... probably',
+          value: 'Bronze'
+        },
+        {
+          color: 'yellow',
+          icon: 'bug',
+          label: 'Chatter Bug',
+          description: 'When you love a track, you make sure to let the artist know',
+          value: 'Frequent Commenter'
         }
       ]
     },

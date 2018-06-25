@@ -60,11 +60,6 @@ class ProfileInfo extends React.Component {
                   </Grid>
                 </Card.Content>
               </Card>
-              <Grid.Row padded>
-                <Grid.Column centered>
-                  <ProfileBadgeList badges={this.props.profile.badges} />
-                </Grid.Column>
-              </Grid.Row>
             </Grid.Row>
           </Grid.Column>
         </Grid.Row>
