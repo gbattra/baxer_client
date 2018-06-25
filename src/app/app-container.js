@@ -48,7 +48,7 @@ class AppContainer extends React.Component {
       badges: PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
         image: PropTypes.string,
-        label: PropTypes.string,
+        description: PropTypes.string,
         value: PropTypes.string
       }))
     })
@@ -67,13 +67,13 @@ class AppContainer extends React.Component {
         {
           color: 'teal',
           image: 'https://react.semantic-ui.com/assets/images/avatar/small/joe.jpg',
-          label: 'Location',
+          description: 'Location',
           value: 'Boston, MA'
         },
         {
           color: 'purple',
           image: 'https://react.semantic-ui.com/assets/images/avatar/small/elliot.jpg',
-          label: 'Joined',
+          description: 'Date joined',
           value: 'June, 2018'
         }
       ]

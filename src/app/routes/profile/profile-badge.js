@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Grid,
-  Button,
-  Segment,
   Image,
-  Header,
-  Label
+  Label,
+  Popup
 } from 'semantic-ui-react'
 
 
@@ -16,7 +14,7 @@ class ProfileBadge extends React.Component {
     badge: PropTypes.shape({
       color: PropTypes.string,
       image: PropTypes.string,
-      label: PropTypes.string,
+      description: PropTypes.string,
       value: PropTypes.string
     }).isRequired
   }
@@ -27,10 +25,12 @@ class ProfileBadge extends React.Component {
 
   render() {
     return (
-      <Label size='tiny' as='a' color={this.props.badge.color} className="fluid">
-        <Image avatar outlined spaced='right' src={this.props.badge.image} />
-        {this.props.badge.value}
-      </Label>
+      <Popup trigger = {
+        <Label size='tiny' as='a' color={this.props.badge.color} className="fluid">
+          <Image avatar outlined spaced='right' src={this.props.badge.image} />
+          {this.props.badge.value}
+        </Label>
+      } content = {this.props.badge.description} inverted />
     )
   }
 }

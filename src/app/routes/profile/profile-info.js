@@ -25,7 +25,7 @@ class ProfileInfo extends React.Component {
       badges: PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
         image: PropTypes.string,
-        label: PropTypes.string,
+        description: PropTypes.string,
         value: PropTypes.string
       }))
     })
