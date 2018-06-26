@@ -26,7 +26,7 @@ class PlaylistsDashboard extends React.Component {
         title: PropTypes.string,
         author: PropTypes.string,
         runtime: PropTypes.int,
-        album_art_url: PropTypes.string,
+        albumArtUrl: PropTypes.string,
         isPlaying: PropTypes.bool
       })
     }))
@@ -38,7 +38,7 @@ class PlaylistsDashboard extends React.Component {
       name: 'My First Playlist',
       trackCount: 14,
       runtime: 180,
-      playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+      playlistArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
       color: 'teal',
       isSelected: true,
       tracks: [
@@ -47,7 +47,7 @@ class PlaylistsDashboard extends React.Component {
           title: 'Create',
           author: 'Overwerk',
           runtime: 120,
-          album_art_url: '',
+          albumArtUrl: '',
           isPlaying: true
         },
         {
@@ -55,35 +55,35 @@ class PlaylistsDashboard extends React.Component {
           title: 'Wont Stop Rocking',
           author: 'R3hab',
           runtime: 120,
-          album_art_url: ''
+          albumArtUrl: ''
         },
         {
           id: 1,
           title: 'Create',
           author: 'Overwerk',
           runtime: 120,
-          album_art_url: ''
+          albumArtUrl: ''
         },
         {
           id: 1,
           title: 'Wont Stop Rocking',
           author: 'R3hab',
           runtime: 120,
-          album_art_url: ''
+          albumArtUrl: ''
         },
         {
           id: 1,
           title: 'Create',
           author: 'Overwerk',
           runtime: 120,
-          album_art_url: ''
+          albumArtUrl: ''
         },
         {
           id: 1,
           title: 'Wont Stop Rocking',
           author: 'R3hab',
           runtime: 120,
-          album_art_url: ''
+          albumArtUrl: ''
         }
       ]
     }

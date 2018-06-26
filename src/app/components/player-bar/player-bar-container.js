@@ -21,7 +21,7 @@ class PlayerBarContainer extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      album_art_url: PropTypes.string
+      albumArtUrl: PropTypes.string
     }).isRequired,
     leftNavRoute: PropTypes.shape({
       label: PropTypes.string,
@@ -33,6 +33,7 @@ class PlayerBarContainer extends React.Component {
     }),
     updateRouteState: PropTypes.func.isRequired
   }
+
   state = {
     isPlaying: false,
     currentTrack: null,
@@ -41,10 +42,6 @@ class PlayerBarContainer extends React.Component {
 
   constructor(props, defaultProps) {
     super(props, defaultProps)
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
   }
 
   navButtonClicked = (side, route) => {

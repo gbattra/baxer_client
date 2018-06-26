@@ -1,17 +1,16 @@
-import './profile.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Grid,
-  Container,
-  Button
+  Button,
+  Header,
+  Search,
+  Segment
 } from 'semantic-ui-react'
-import ProfileDashboard from './profile-dashboard'
-import ProfileInfo from './profile-info'
-import ProfileBadgeList from './profile-badges-list'
+import TrackCard from './track-card'
 
 
-class ProfileContainer extends React.Component {
+class ProfileDashboard extends React.Component {
 
   static props = {
     profile: PropTypes.shape({
@@ -38,22 +37,19 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <Grid columns={3} divided className="profile-container">
-        <Grid.Row centered stretched>
-          <Grid.Column width={4}>
-            <Container>
-              <ProfileInfo profile={this.props.profile}/>
-            </Container>
+      <Grid padded centered>
+        <Grid.Row >
+          <Grid.Column>
+            <Search fluid className="search-container" />
           </Grid.Column>
-          <Grid.Column width={8}>
-            <Container>
-              <ProfileDashboard />
-            </Container>
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <Container>
-              <ProfileBadgeList badges={this.props.profile.badges} />
-            </Container>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <Segment.Group>
+              {this.props.profile.tracks.map((track) => {
+                return <TrackCard track={track} />
+              })}
+            </Segment.Group>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -61,4 +57,4 @@ class ProfileContainer extends React.Component {
   }
 }
 
-export default ProfileContainer
+export default ProfileDashboard

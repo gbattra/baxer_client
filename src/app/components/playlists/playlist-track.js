@@ -18,7 +18,7 @@ class PlaylistTrack extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      album_art_url: PropTypes.string,
+      albumArtUrl: PropTypes.string,
       isPlaying: PropTypes.bool
     }).isRequired
   }
@@ -29,7 +29,7 @@ class PlaylistTrack extends React.Component {
         <Grid verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={1}>
-              <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+              <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
             </Grid.Column>
             <Grid.Column width={11}>
               <Header as='h5'>

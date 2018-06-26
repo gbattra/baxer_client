@@ -20,7 +20,7 @@ class PlayerControls extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      album_art_url: PropTypes.string
+      albumArtUrl: PropTypes.string
     }).isRequired
   }
 
@@ -47,7 +47,7 @@ class PlayerControls extends React.Component {
             </div>
           </Grid.Column>
           <Grid.Column width={1} verticalAlign='middle'>
-            <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
           </Grid.Column>
           <Grid.Column width={4} verticalAlign='middle'>
             <Header as='h5'>

@@ -34,7 +34,7 @@ class FeedsListItem extends React.Component {
           <Grid.Row>
             <Grid.Column width={13}>
               <Header as='h4'>
-                <Image circular src='https://react.semantic-ui.com/assets/images/avatar/large/patrick.png' />
+                <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' />
                 {this.props.feedsListItem.name}
               </Header>
             </Grid.Column>

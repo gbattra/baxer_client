@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
-import FeedContainer from './routes/feed/feed-container'
-import PlayerBarContainer from './player-bar/player-bar-container'
-import PlaylistsContainer from './routes/playlists/playlists-container'
-import ProfileContainer from './routes/profile/profile-container'
+import FeedContainer from '../feed/feed-container'
+import PlayerBarContainer from '../player-bar/player-bar-container'
+import PlaylistsContainer from '../playlists/playlists-container'
+import ProfileContainer from '../profile/profile-container'
 import './app-container.scss'
 
 const ROUTES = {
@@ -22,7 +22,7 @@ class AppContainer extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      album_art_url: PropTypes.string
+      albumArtUrl: PropTypes.string
     }),
     playlists: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.int,
@@ -51,6 +51,13 @@ class AppContainer extends React.Component {
         label: PropTypes.string,
         description: PropTypes.string,
         value: PropTypes.string
+      })),
+      tracks: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.int,
+        title: PropTypes.string,
+        author: PropTypes.string,
+        runtime: PropTypes.int,
+        albumArtUrl: PropTypes.string
       }))
     })
   }
@@ -59,7 +66,7 @@ class AppContainer extends React.Component {
     profile: {
       id: 1,
       color: 'teal',
-      profileImageUrl: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg',
+      profileImageUrl: 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg',
       name: 'Broderick Attra',
       description: 'I make waves of air pulse through your earholes in appealing ways',
       dateJoined: 'June, 2018',
@@ -93,6 +100,16 @@ class AppContainer extends React.Component {
           description: 'When you love a track, you make sure to let the artist know',
           value: 'Frequent Commenter'
         }
+      ],
+      tracks: [
+        {
+          id: 1,
+          title: 'Create',
+          author: 'Overwerk',
+          runtime: 120,
+          albumArtUrl: '',
+          shareCount: 150
+        }
       ]
     },
     playingTrack: {
@@ -100,7 +117,8 @@ class AppContainer extends React.Component {
       title: 'Create',
       author: 'Overwerk',
       runtime: 120,
-      album_art_url: ''
+      albumArtUrl: '',
+      shareCount: 150
     },
     playlists: [
       {
@@ -108,7 +126,7 @@ class AppContainer extends React.Component {
         name: 'My First Playlist',
         trackCount: 14,
         runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/assets/images/wireframe/square-image.png',
+        playlistArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
         color: 'teal',
         isSelected: true,
       }
@@ -116,15 +134,15 @@ class AppContainer extends React.Component {
     allRoutes: [
       {
         label: 'profile',
-        image: 'https://react.semantic-ui.com/assets/images/avatar/small/molly.png'
+        image: 'https://react.semantic-ui.com/images/avatar/small/molly.png'
       },
       {
         label: 'playlists',
-        image: 'https://react.semantic-ui.com/assets/images/avatar/large/daniel.jpg'
+        image: 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'
       },
       {
         label: 'feed',
-        image: 'https://react.semantic-ui.com/assets/images/avatar/large/patrick.png'
+        image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
       }
     ]
   }

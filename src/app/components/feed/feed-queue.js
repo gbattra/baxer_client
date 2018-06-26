@@ -16,7 +16,7 @@ class FeedQueue extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      album_art_url: PropTypes.string
+      albumArtUrl: PropTypes.string
     }))
   }
 
@@ -27,42 +27,42 @@ class FeedQueue extends React.Component {
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        albumArtUrl: ''
       }
     ]
   }
@@ -83,7 +83,7 @@ class FeedQueue extends React.Component {
                     <Grid verticalAlign='middle'>
                       <Grid.Row>
                         <Grid.Column width={2}>
-                          <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+                          <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
                         </Grid.Column>
                         <Grid.Column width={14}>
                           <Header as='h5'>
