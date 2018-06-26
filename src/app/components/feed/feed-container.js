@@ -13,7 +13,7 @@ class FeedContainer extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string,
+      trackArtUrl: PropTypes.string,
       shareCount: PropTypes.int
     })
   }
@@ -24,7 +24,7 @@ class FeedContainer extends React.Component {
       title: 'Head Full of Shadows',
       author: 'The Glitch Mob',
       runtime: 120,
-      albumArtUrl: '',
+      trackArtUrl: '',
       shareCount: 150
     }
   }

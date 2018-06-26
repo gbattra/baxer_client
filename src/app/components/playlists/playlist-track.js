@@ -18,7 +18,7 @@ class PlaylistTrack extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string,
+      trackArtUrl: PropTypes.string,
       isPlaying: PropTypes.bool
     }).isRequired
   }

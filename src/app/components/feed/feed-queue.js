@@ -16,7 +16,7 @@ class FeedQueue extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string
+      trackArtUrl: PropTypes.string
     }))
   }
 
@@ -27,42 +27,42 @@ class FeedQueue extends React.Component {
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        albumArtUrl: ''
+        trackArtUrl: ''
       }
     ]
   }

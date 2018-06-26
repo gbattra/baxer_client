@@ -22,7 +22,7 @@ class AppContainer extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string
+      trackArtUrl: PropTypes.string
     }),
     playlists: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.int,
@@ -57,7 +57,7 @@ class AppContainer extends React.Component {
         title: PropTypes.string,
         author: PropTypes.string,
         runtime: PropTypes.int,
-        albumArtUrl: PropTypes.string
+        trackArtUrl: PropTypes.string
       }))
     })
   }
@@ -107,8 +107,44 @@ class AppContainer extends React.Component {
           title: 'Create',
           author: 'Overwerk',
           runtime: 120,
-          albumArtUrl: '',
-          shareCount: 150
+          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
+          shareCount: 150,
+          color: 'blue'
+        },{
+          id: 1,
+          title: 'Create',
+          author: 'Overwerk',
+          runtime: 120,
+          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
+          shareCount: 150,
+          color: 'yellow'
+        },
+        {
+          id: 1,
+          title: 'Create',
+          author: 'Overwerk',
+          runtime: 120,
+          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
+          shareCount: 150,
+          color: 'pink'
+        },
+        {
+          id: 1,
+          title: 'Create',
+          author: 'Overwerk',
+          runtime: 120,
+          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
+          shareCount: 150,
+          color: 'red'
+        },
+        {
+          id: 1,
+          title: 'Create',
+          author: 'Overwerk',
+          runtime: 120,
+          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
+          shareCount: 150,
+          color: 'teal'
         }
       ]
     },
@@ -117,7 +153,7 @@ class AppContainer extends React.Component {
       title: 'Create',
       author: 'Overwerk',
       runtime: 120,
-      albumArtUrl: '',
+      trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
       shareCount: 150
     },
     playlists: [

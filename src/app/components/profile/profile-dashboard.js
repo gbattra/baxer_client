@@ -5,7 +5,7 @@ import {
   Button,
   Header,
   Search,
-  Segment
+  Card
 } from 'semantic-ui-react'
 import TrackCard from './track-card'
 
@@ -28,11 +28,16 @@ class ProfileDashboard extends React.Component {
         description: PropTypes.string,
         value: PropTypes.string
       }))
-    }).isRequired
+    }).isRequired,
+    userIsOwner: PropTypes.bool
   }
 
-  constructor(props) {
-    super(props)
+  static defaultProps = {
+    userIsOwner: true
+  }
+
+  constructor(props, defaultProps) {
+    super(props, defaultProps)
   }
 
   render() {
@@ -45,11 +50,11 @@ class ProfileDashboard extends React.Component {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <Segment.Group>
+            <Card.Group itemsPerRow={4}>
               {this.props.profile.tracks.map((track) => {
-                return <TrackCard track={track} />
+                return <TrackCard track={track} userIsOwner={this.props.userIsOwner}/>
               })}
-            </Segment.Group>
+            </Card.Group>
           </Grid.Column>
         </Grid.Row>
       </Grid>

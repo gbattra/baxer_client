@@ -30,7 +30,7 @@ class LikedTracksList extends React.Component {
       title: PropTypes.string,
       author: PropTypes.string,
       runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string,
+      trackArtUrl: PropTypes.string,
       isPlaying: PropTypes.bool
     }))
   }
@@ -53,7 +53,7 @@ class LikedTracksList extends React.Component {
         title: 'Head Full of Shadows',
         author: 'The Glitch Mob',
         runtime: 120,
-        albumArtUrl: '',
+        trackArtUrl: '',
         isPlaying: true
       },
       {
@@ -61,7 +61,7 @@ class LikedTracksList extends React.Component {
         title: 'Map of the Problematique',
         author: 'Muse',
         runtime: 120,
-        albumArtUrl: '',
+        trackArtUrl: '',
         isPlaying: false
       }
     ]
