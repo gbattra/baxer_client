@@ -15,16 +15,7 @@ import { AllShapes } from '../../shapes/all-shapes'
 class ProfileContainer extends React.Component {
 
   static props = {
-    profile: PropTypes.shape({
-      id: PropTypes.int,
-      color: PropTypes.string,
-      profileImageUrl: PropTypes.string,
-      name: PropTypes.string,
-      description: PropTypes.string,
-      dateJoined: PropTypes.string,
-      location: PropTypes.string,
-      badges: PropTypes.arrayOf(AllShapes.badge)
-    }).isRequired
+    profile: AllShapes.profile.isRequired
   }
 
   constructor(props) {

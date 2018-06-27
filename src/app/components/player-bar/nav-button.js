@@ -5,16 +5,14 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class NavButton extends React.Component {
 
   static props = {
     onClickFunc: PropTypes.func.isRequired,
-    route: PropTypes.shape({
-      label: PropTypes.string,
-      image: PropTypes.string
-    }),
+    route: AllShapes.route,
     side: PropTypes.string.isRequired
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AllShapes } from '../../shapes/all-shapes'
 import {
   Grid,
   Container,
@@ -13,10 +14,7 @@ import {
 class FeedsListItem extends React.Component {
 
   static props = {
-    feedsListItem: PropTypes.shape({
-      name: PropTypes.string,
-      color: PropTypes.string
-    }).isRequired
+    feedsListItem: AllShapes.feedListItem.isRequired
   }
 
   state = {

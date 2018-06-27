@@ -15,22 +15,7 @@ import { AllShapes } from '../../shapes/all-shapes'
 class ProfileDashboard extends React.Component {
 
   static props = {
-    profile: PropTypes.shape({
-      id: PropTypes.int,
-      color: PropTypes.string,
-      profileImageUrl: PropTypes.string,
-      name: PropTypes.string,
-      description: PropTypes.string,
-      dateJoined: PropTypes.string,
-      location: PropTypes.string,
-      badges: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        image: PropTypes.string,
-        label: PropTypes.string,
-        description: PropTypes.string,
-        value: PropTypes.string
-      }))
-    }).isRequired,
+    profile: AllShapes.profile.isRequired,
     userIsOwner: PropTypes.bool
   }
 

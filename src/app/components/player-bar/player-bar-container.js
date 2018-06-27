@@ -18,14 +18,8 @@ class PlayerBarContainer extends React.Component {
 
   static props = {
     playingTrack: AllShapes.track.isRequired,
-    leftNavRoute: PropTypes.shape({
-      label: PropTypes.string,
-      image: PropTypes.string,
-    }),
-    rightNavRoute: PropTypes.shape({
-      label: PropTypes.string,
-      image: PropTypes.string,
-    }),
+    leftNavRoute: AllShapes.route,
+    rightNavRoute: AllShapes.route,
     updateRouteState: PropTypes.func.isRequired
   }
 

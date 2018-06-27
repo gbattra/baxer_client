@@ -13,14 +13,7 @@ class FeedContainer extends React.Component {
   }
 
   static defaultProps = {
-    feedTrack: {
-      id: 1,
-      title: 'Head Full of Shadows',
-      author: 'The Glitch Mob',
-      runtime: 120,
-      trackArtUrl: '',
-      shareCount: 150
-    }
+    feedTrack: AllShapes.track
   }
 
   constructor(props, defaultProps) {

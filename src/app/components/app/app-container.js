@@ -20,27 +20,8 @@ class AppContainer extends React.Component {
   static props = {
     playingTrack: AllShapes.track,
     playlists: PropTypes.arrayOf(AllShapes.playlist),
-    allRoutes: PropTypes.shape({
-      label: PropTypes.string,
-      image: PropTypes.string
-    }),
-    profile: PropTypes.shape({
-      id: PropTypes.int,
-      color: PropTypes.string,
-      profileImageUrl: PropTypes.string,
-      name: PropTypes.string,
-      description: PropTypes.string,
-      dateJoined: PropTypes.string,
-      location: PropTypes.string,
-      badges: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        image: PropTypes.string,
-        label: PropTypes.string,
-        description: PropTypes.string,
-        value: PropTypes.string
-      })),
-      tracks: PropTypes.arrayOf(AllShapes.track)
-    })
+    allRoutes: AllShapes.route,
+    profile: AllShapes.profile
   }
 
   static defaultProps = {

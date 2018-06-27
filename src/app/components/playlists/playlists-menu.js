@@ -14,7 +14,7 @@ import { AllShapes } from '../../shapes/all-shapes'
 class PlaylistsMenu extends React.Component {
 
   static props = {
-    playlists: PropTypes.arrayOf(PropTypes.shape(AllShapes.playlist)).isRequired
+    playlists: PropTypes.arrayOf(AllShapes.playlist).isRequired
   }
 
   constructor(props, defaultProps) {
