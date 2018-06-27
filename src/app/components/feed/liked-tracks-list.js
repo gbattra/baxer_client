@@ -11,6 +11,7 @@ import {
   Dropdown
 } from 'semantic-ui-react'
 import LikedTracksListItem from './liked-tracks-list-item'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class LikedTracksList extends React.Component {
@@ -25,14 +26,7 @@ class LikedTracksList extends React.Component {
         circular: PropTypes.bool
       })
     })),
-    likedTracksListItems: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      trackArtUrl: PropTypes.string,
-      isPlaying: PropTypes.bool
-    }))
+    likedTracksListItems: PropTypes.arrayOf(AllShapes.track)
   }
 
   static defaultProps = {

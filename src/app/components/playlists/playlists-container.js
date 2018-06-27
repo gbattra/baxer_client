@@ -5,45 +5,14 @@ import { Grid, Segment, Container } from 'semantic-ui-react'
 import PlaylistsMenu from './playlists-menu'
 import PlaylistInfo from './playlist-info'
 import PlaylistsDashboard from './playlists-dashboard'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlaylistsContainer extends React.Component {
 
   static props = {
-    activePlaylist: PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string,
-      color: PropTypes.string,
-      isSelected: PropTypes.bool,
-      tracks: PropTypes.arrayOf({
-        id: PropTypes.int,
-        title: PropTypes.string,
-        author: PropTypes.string,
-        runtime: PropTypes.int,
-        trackArtUrl: PropTypes.string,
-        isPlaying: PropTypes.bool
-      })
-    }),
-    playlists: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string,
-      color: PropTypes.string,
-      isSelected: PropTypes.bool,
-      tracks: PropTypes.arrayOf({
-        id: PropTypes.int,
-        title: PropTypes.string,
-        author: PropTypes.string,
-        runtime: PropTypes.int,
-        trackArtUrl: PropTypes.string,
-        isPlaying: PropTypes.bool
-      })
-    })).isRequired
+    activePlaylist: AllShapes.playlist,
+    playlists: PropTypes.arrayOf(AllShapes.playlist)
   }
 
   state = {

@@ -9,6 +9,7 @@ import {
 import ProfileDashboard from './profile-dashboard'
 import ProfileInfo from './profile-info'
 import ProfileBadgeList from './profile-badges-list'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class ProfileContainer extends React.Component {
@@ -22,13 +23,7 @@ class ProfileContainer extends React.Component {
       description: PropTypes.string,
       dateJoined: PropTypes.string,
       location: PropTypes.string,
-      badges: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        image: PropTypes.string,
-        label: PropTypes.string,
-        description: PropTypes.string,
-        value: PropTypes.string
-      }))
+      badges: PropTypes.arrayOf(AllShapes.badge)
     }).isRequired
   }
 

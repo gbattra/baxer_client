@@ -6,18 +6,13 @@ import {
   Header,
   Image
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class FeedQueue extends React.Component {
 
   static props = {
-    upcomingTracks: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      trackArtUrl: PropTypes.string
-    }))
+    upcomingTracks: PropTypes.arrayOf(AllShapes.track)
   }
 
   static defaultProps = {

@@ -8,18 +8,13 @@ import {
   Button
 } from 'semantic-ui-react'
 import PlaylistsMenuOption from './playlists-menu-option'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlaylistsMenu extends React.Component {
 
   static props = {
-    playlists: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string
-    })).isRequired
+    playlists: PropTypes.arrayOf(PropTypes.shape(AllShapes.playlist)).isRequired
   }
 
   constructor(props, defaultProps) {

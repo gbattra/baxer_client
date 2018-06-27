@@ -8,28 +8,13 @@ import {
   Search
 } from 'semantic-ui-react'
 import PlaylistTrack from './playlist-track'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlaylistsDashboard extends React.Component {
 
   static props = {
-    playlistTracks: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string,
-      color: PropTypes.string,
-      isSelected: PropTypes.bool,
-      tracks: PropTypes.arrayOf({
-        id: PropTypes.int,
-        title: PropTypes.string,
-        author: PropTypes.string,
-        runtime: PropTypes.int,
-        trackArtUrl: PropTypes.string,
-        isPlaying: PropTypes.bool
-      })
-    }))
+    playlistTracks: PropTypes.arrayOf(AllShapes.track)
   }
 
   static defaultProps = {

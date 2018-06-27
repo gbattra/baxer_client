@@ -9,20 +9,13 @@ import {
   Divider,
   Button
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlaylistInfo extends React.Component {
 
   static props = {
-    playlist: PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string,
-      color: PropTypes.string,
-      isSelected: PropTypes.bool
-    }).isRequired
+    playlist: AllShapes.playlist.isRequired
   }
 
   constructor(props, defaultProps) {

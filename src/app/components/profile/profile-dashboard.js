@@ -5,9 +5,11 @@ import {
   Button,
   Header,
   Search,
-  Card
+  Card,
+  Icon
 } from 'semantic-ui-react'
 import TrackCard from './track-card'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class ProfileDashboard extends React.Component {
@@ -44,8 +46,14 @@ class ProfileDashboard extends React.Component {
     return (
       <Grid padded centered>
         <Grid.Row >
-          <Grid.Column>
+          <Grid.Column width={13}>
             <Search fluid className="search-container" />
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <Button icon labelPosition='right' size='large' floated='right'>
+              Upload
+              <Icon name='sign out alternate' rotated='counterclockwise'/>
+            </Button>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

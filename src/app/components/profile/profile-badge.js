@@ -6,18 +6,13 @@ import {
   Header,
   Popup
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class ProfileBadge extends React.Component {
 
   static props = {
-    badge: PropTypes.shape({
-      color: PropTypes.string,
-      image: PropTypes.string,
-      label: PropTypes.string,
-      description: PropTypes.string,
-      value: PropTypes.string
-    }).isRequired
+    badge: AllShapes.badge.isRequired
   }
 
   constructor(props) {

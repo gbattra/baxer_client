@@ -1,6 +1,7 @@
 import './feed.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AllShapes } from '../../shapes/all-shapes'
 import {
   Grid,
   Container,
@@ -17,14 +18,7 @@ import FeedControls from './feed-controls'
 class FeedDashboard extends React.Component {
 
   static props = {
-    feedTrack: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      trackArtUrl: PropTypes.string,
-      shareCount: PropTypes.string
-    }).isRequired
+    feedTrack: AllShapes.track
   }
 
   constructor(props, defaultProps) {

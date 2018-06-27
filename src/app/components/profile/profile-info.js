@@ -6,29 +6,17 @@ import {
   Button,
   Header,
   Card,
-  Image
+  Image,
+  Icon
 } from 'semantic-ui-react'
 import ProfileBadgeList from './profile-badges-list'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class ProfileInfo extends React.Component {
 
   static props = {
-    profile: PropTypes.shape({
-      id: PropTypes.int,
-      color: PropTypes.string,
-      profileImageUrl: PropTypes.string,
-      name: PropTypes.string,
-      description: PropTypes.string,
-      dateJoined: PropTypes.string,
-      location: PropTypes.string,
-      badges: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        image: PropTypes.string,
-        description: PropTypes.string,
-        value: PropTypes.string
-      }))
-    })
+    profile: AllShapes.profile
   }
 
   constructor(props) {

@@ -6,18 +6,13 @@ import {
   Button,
   Popup
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class TrackCard extends React.Component {
 
   static props = {
-    track: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      albumArtUrl: PropTypes.string
-    }),
+    track: AllShapes.track,
     userIsOwner: PropTypes.bool
   }
 

@@ -11,18 +11,13 @@ import {
 } from 'semantic-ui-react'
 import PlayerControls from './player-controls.js'
 import NavButton from './nav-button'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlayerBarContainer extends React.Component {
 
   static props = {
-    playingTrack: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      trackArtUrl: PropTypes.string
-    }).isRequired,
+    playingTrack: AllShapes.track.isRequired,
     leftNavRoute: PropTypes.shape({
       label: PropTypes.string,
       image: PropTypes.string,

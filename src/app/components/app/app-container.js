@@ -1,3 +1,5 @@
+import './app-container.scss'
+import { AllShapes } from '../../shapes/all-shapes'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
@@ -5,7 +7,6 @@ import FeedContainer from '../feed/feed-container'
 import PlayerBarContainer from '../player-bar/player-bar-container'
 import PlaylistsContainer from '../playlists/playlists-container'
 import ProfileContainer from '../profile/profile-container'
-import './app-container.scss'
 
 const ROUTES = {
   PROFILE: 0,
@@ -17,22 +18,8 @@ const ROUTES = {
 class AppContainer extends React.Component {
 
   static props = {
-    playingTrack: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      trackArtUrl: PropTypes.string
-    }),
-    playlists: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      name: PropTypes.string,
-      trackCount: PropTypes.int,
-      runtime: PropTypes.int,
-      playlistArtUrl: PropTypes.string,
-      color: PropTypes.string,
-      isSelected: PropTypes.bool
-    })),
+    playingTrack: AllShapes.track,
+    playlists: PropTypes.arrayOf(AllShapes.playlist),
     allRoutes: PropTypes.shape({
       label: PropTypes.string,
       image: PropTypes.string
@@ -52,13 +39,7 @@ class AppContainer extends React.Component {
         description: PropTypes.string,
         value: PropTypes.string
       })),
-      tracks: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.int,
-        title: PropTypes.string,
-        author: PropTypes.string,
-        runtime: PropTypes.int,
-        trackArtUrl: PropTypes.string
-      }))
+      tracks: PropTypes.arrayOf(AllShapes.track)
     })
   }
 
