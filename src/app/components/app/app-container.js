@@ -7,11 +7,14 @@ import FeedContainer from '../feed/feed-container'
 import PlayerBarContainer from '../player-bar/player-bar-container'
 import PlaylistsContainer from '../playlists/playlists-container'
 import ProfileContainer from '../profile/profile-container'
+import TrackPageContainer from '../track/track-page-container'
+
 
 const ROUTES = {
   PROFILE: 0,
   PLAYLISTS: 1,
-  FEED: 2
+  FEED: 2,
+  TRACK: 3
 }
 
 
@@ -141,12 +144,16 @@ class AppContainer extends React.Component {
       {
         label: 'feed',
         image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
+      },
+      {
+        label: 'track',
+        image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
       }
     ]
   }
 
   state = {
-    currentRoute: this.props.allRoutes[ROUTES.PROFILE],
+    currentRoute: this.props.allRoutes[ROUTES.TRACK],
     leftNavRoute: this.props.allRoutes[ROUTES.FEED],
     rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
   }
@@ -177,6 +184,10 @@ class AppContainer extends React.Component {
     } else if (this.state.currentRoute.label === 'playlists') {
       return (
         <PlaylistsContainer playlists={this.props.playlists}/>
+      )
+    } else if (this.state.currentRoute.label === 'track') {
+      return (
+        <TrackPageContainer track={this.props.playingTrack} />
       )
     }
   }

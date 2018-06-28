@@ -48,7 +48,8 @@ class LikedTracksList extends React.Component {
         author: 'The Glitch Mob',
         runtime: 120,
         trackArtUrl: '',
-        isPlaying: true
+        isPlaying: true,
+        color: 'orange'
       },
       {
         id: 1,
@@ -56,7 +57,8 @@ class LikedTracksList extends React.Component {
         author: 'Muse',
         runtime: 120,
         trackArtUrl: '',
-        isPlaying: false
+        isPlaying: false,
+        color: 'red'
       }
     ]
   }

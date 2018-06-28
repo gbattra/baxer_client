@@ -28,7 +28,7 @@ class LikedTracksListItem extends React.Component {
 
   render() {
     return (
-      <Segment>
+      <Segment color={this.props.likedTracksListItem.color}>
         <Grid verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={3}>

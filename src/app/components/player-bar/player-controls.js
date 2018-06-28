@@ -29,11 +29,11 @@ class PlayerControls extends React.Component {
         <Grid.Row stretched>
           <Grid.Column width={5}  verticalAlign='middle'>
               <Button.Group>
-                <Button basic icon='shuffle' size='medium'/>
-                <Button basic icon='step backward' size='medium'/>
-                <Button basic icon='pause' size='huge'/>
-                <Button basic icon='step forward' size='medium'/>
-                <Button basic icon='redo alternate' size='medium'/>
+                <Button basic icon='shuffle' size='medium' />
+                <Button basic icon='step backward' size='medium' />
+                <Button basic icon='pause' size='huge' />
+                <Button basic icon='step forward' size='medium' />
+                <Button basic icon='redo alternate' size='medium' />
               </Button.Group>
           </Grid.Column>
           <Grid.Column width={5} verticalAlign='middle'>
