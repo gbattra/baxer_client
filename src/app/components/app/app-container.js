@@ -119,7 +119,13 @@ class AppContainer extends React.Component {
       author: 'Overwerk',
       runtime: 120,
       trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-      shareCount: 150
+      shareCount: 150,
+      trackRank: {
+        color: 'brown',
+        icon: 'chess knight',
+        label: 'knight',
+        value: 1000
+      }
     },
     playlists: [
       {

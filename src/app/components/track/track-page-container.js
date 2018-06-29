@@ -20,7 +20,7 @@ class TrackPageContainer extends React.Component {
 
   render() {
     return (
-      <Grid padded divided columns={3} className="track-page-container">
+      <Grid divided columns={3} className="track-page-container">
         <Grid.Column width={3} />
         <Grid.Column width={6}>
             <TrackDetail track={this.props.track} />

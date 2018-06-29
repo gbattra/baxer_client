@@ -4,6 +4,7 @@ import { profile } from './profile-shape'
 import { route } from './route-shape'
 import { track } from './track-shape'
 import { feedListItem } from './feed-list-item'
+import { trackRank } from './track-rank-shape'
 import PropTypes from 'prop-types'
 
 
@@ -12,6 +13,7 @@ export const AllShapes = {
   feedListItem: feedListItem,
   playlist: playlist,
   profile: profile,
+  trackRank: trackRank,
   route: route,
   track: track
 }

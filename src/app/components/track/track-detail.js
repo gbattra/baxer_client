@@ -9,6 +9,7 @@ import {
   Button
 } from 'semantic-ui-react'
 import TrackControls from './track-controls'
+import TrackStatsheet from './track-statsheet'
 
 
 class TrackDetail extends React.Component {
@@ -43,6 +44,9 @@ class TrackDetail extends React.Component {
           <Grid.Column>
             <TrackControls track={this.props.track} />
           </Grid.Column>
+        </Grid.Row>
+        <Grid.Row stretched>
+          <TrackStatsheet track={this.props.track} />
         </Grid.Row>
       </Grid>
     )
