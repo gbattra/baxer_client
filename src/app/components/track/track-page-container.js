@@ -6,6 +6,7 @@ import {
   Grid
 } from 'semantic-ui-react'
 import TrackDetail from './track-detail'
+import TrackComments from './track-comments'
 
 
 class TrackPageContainer extends React.Component {
@@ -25,7 +26,9 @@ class TrackPageContainer extends React.Component {
         <Grid.Column width={6}>
             <TrackDetail track={this.props.track} />
         </Grid.Column>
-        <Grid.Column width={4} />
+        <Grid.Column width={4}>
+          <TrackComments comments={this.props.track.comments} />
+        </Grid.Column>
         <Grid.Column width={3} />
       </Grid>
     )

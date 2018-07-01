@@ -121,7 +121,7 @@ class AppContainer extends React.Component {
       trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
       shareCount: 150,
       trackRank: {
-        color: 'brown',
+        color: 'olive',
         icon: 'chess knight',
         label: 'knight',
         value: 1000

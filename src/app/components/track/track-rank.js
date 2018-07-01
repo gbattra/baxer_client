@@ -20,13 +20,13 @@ class TrackRank extends React.Component {
   static defaultProps = {
     trackRanks: [
       {
-        color: 'black',
+        color: 'grey',
         icon: 'chess pawn',
         label: 'pawn',
         value: '100'
       },
       {
-        color: 'brown',
+        color: 'olive',
         icon: 'chess knight',
         label: 'knight',
         value: '1,000'
@@ -79,7 +79,7 @@ class TrackRank extends React.Component {
       <Popup trigger={this.trackRankHeader(this.props.trackRank, true)}
       content={
         <div>
-          <Header as='h5' subheader="Track ranks show how many shares your track has received. The more shares, the higher the rank" />
+          <Header as='h5' subheader="Track ranks are determined by the number of shares the track has. The more shares, the higher the rank" />
           <Segment.Group horizontal>
             {this.props.trackRanks.map(
               (trackRank) => {
