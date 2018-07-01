@@ -6,7 +6,8 @@ import {
   Button,
   Comment,
   Form,
-  Header
+  Header,
+  Input
 } from 'semantic-ui-react'
 
 
@@ -40,40 +41,45 @@ class TrackComments extends React.Component {
       <Grid>
         <Grid.Row>
           <Grid.Column>
-            <Comment.Group>
+            <Comment.Group className="comments-container">
               <Header as='h3' dividing content='Comments' />
-
-            {this.props.comments.map((comment) => {
-              return (
-                <Comment>
-                  <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-                  <Comment.Content>
-                    <Comment.Author as='a'>{comment.author}</Comment.Author>
-                    <Comment.Metadata>
-                      <div>{comment.datePosted}</div>
-                    </Comment.Metadata>
-                    <Comment.Text>{comment.body}</Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                {Object.keys(comment.reply).length > 0 ? (
-                  <Comment.Group>
-                    <Comment>
-                      <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
-                      <Comment.Content>
-                        <Comment.Author as='a'></Comment.Author>
-                        <Comment.Metadata>
-                          <div>{comment.reply.datePosted}</div>
-                        </Comment.Metadata>
-                        <Comment.Text>{comment.reply.body}</Comment.Text>
-                      </Comment.Content>
-                    </Comment>
-                  </Comment.Group>
-                ) : null}
-                </Comment>
-              )
-            })}
+              <Comment>
+                <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+                <Comment.Content>
+                  <Input placeholder='Comment' className="add-comment"/>
+                </Comment.Content>
+              </Comment>
+              {this.props.comments.map((comment) => {
+                return (
+                  <Comment>
+                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+                    <Comment.Content>
+                      <Comment.Author as='a'>{comment.author}</Comment.Author>
+                      <Comment.Metadata>
+                        <div>{comment.datePosted}</div>
+                      </Comment.Metadata>
+                      <Comment.Text>{comment.body}</Comment.Text>
+                      <Comment.Actions>
+                        <Comment.Action>Reply</Comment.Action>
+                      </Comment.Actions>
+                    </Comment.Content>
+                  {Object.keys(comment.reply).length > 0 ? (
+                    <Comment.Group>
+                      <Comment>
+                        <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
+                        <Comment.Content>
+                          <Comment.Author as='a'></Comment.Author>
+                          <Comment.Metadata>
+                            <div>{comment.reply.datePosted}</div>
+                          </Comment.Metadata>
+                          <Comment.Text>{comment.reply.body}</Comment.Text>
+                        </Comment.Content>
+                      </Comment>
+                    </Comment.Group>
+                  ) : null}
+                  </Comment>
+                )
+              })}
             </Comment.Group>
           </Grid.Column>
         </Grid.Row>
