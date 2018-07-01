@@ -23,11 +23,11 @@ class TrackComments extends React.Component {
         author: 'Broderick Attra',
         body: 'Game changing track!',
         datePosted: 'April 12, 2018',
-        reply: {
+        replies: [{
           author: 'The Glitch Mob',
           body: 'Thanks man, you are our number one fan!',
           datePosted: 'April 12, 2018'
-        }
+        }]
       }
     ]
   }
@@ -63,20 +63,22 @@ class TrackComments extends React.Component {
                         <Comment.Action>Reply</Comment.Action>
                       </Comment.Actions>
                     </Comment.Content>
-                  {Object.keys(comment.reply).length > 0 ? (
                     <Comment.Group>
-                      <Comment>
-                        <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
-                        <Comment.Content>
-                          <Comment.Author as='a'></Comment.Author>
-                          <Comment.Metadata>
-                            <div>{comment.reply.datePosted}</div>
-                          </Comment.Metadata>
-                          <Comment.Text>{comment.reply.body}</Comment.Text>
-                        </Comment.Content>
-                      </Comment>
+                    {comment.replies.map((reply) => {
+                      return (
+                          <Comment>
+                          <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
+                          <Comment.Content>
+                            <Comment.Author as='a'>{reply.author}</Comment.Author>
+                            <Comment.Metadata>
+                              <div>{reply.datePosted}</div>
+                            </Comment.Metadata>
+                            <Comment.Text>{reply.body}</Comment.Text>
+                          </Comment.Content>
+                        </Comment>
+                      )
+                    })}
                     </Comment.Group>
-                  ) : null}
                   </Comment>
                 )
               })}

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import {
   Header,
   Image,
-  Button
+  Button,
+  Icon
 } from 'semantic-ui-react'
 import { AllShapes } from '../../shapes/all-shapes'
 
@@ -13,6 +14,7 @@ class NavButton extends React.Component {
   static props = {
     onClickFunc: PropTypes.func.isRequired,
     route: AllShapes.route,
+    icon: PropTypes.bool,
     side: PropTypes.string.isRequired
   }
 
@@ -25,10 +27,15 @@ class NavButton extends React.Component {
   }
 
   render() {
+    const alignment = this.props.icon ? 'left ' : ''
     return (
       <Button basic className='fw' onClick={this.onButtonClick}>
-        <Header as='h4' style={{'text-transform':'capitalize'}}>
-          <Image circular src={this.props.route.image}/>
+        <Header as='h4' textAlign={alignment} style={{'text-transform':'capitalize'}}>
+        {this.props.icon ? (
+          <Icon circular bordered name='arrow left' size='large' />
+        ) : (
+          <Image circular src={this.props.route.image} />
+        )}
           {this.props.route.label}
         </Header>
       </Button>

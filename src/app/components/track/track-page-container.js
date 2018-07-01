@@ -7,11 +7,13 @@ import {
 } from 'semantic-ui-react'
 import TrackDetail from './track-detail'
 import TrackComments from './track-comments'
+import NavButton from '../../utils/components/nav-button'
 
 
 class TrackPageContainer extends React.Component {
 
   static props = {
+    currentRoute: AllShapes.route,
     track: AllShapes.track.isRequired
   }
 
@@ -19,10 +21,15 @@ class TrackPageContainer extends React.Component {
     super(props)
   }
 
+  navButtonClicked = (side, route) => {
+  }
+
   render() {
     return (
       <Grid divided columns={3} className="track-page-container">
-        <Grid.Column width={3} />
+        <Grid.Column width={3}>
+          <NavButton side='left' icon route={this.props.currentRoute} onClickFunc={this.navButtonClicked} />
+        </Grid.Column>
         <Grid.Column width={6}>
             <TrackDetail track={this.props.track} />
         </Grid.Column>

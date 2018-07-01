@@ -6,5 +6,11 @@ export const comment = PropTypes.shape({
   id: PropTypes.int,
   author: profile,
   body: PropTypes.string,
-  datePosted: PropTypes.string
+  datePosted: PropTypes.string,
+  replies: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.int,
+    author: profile,
+    body: PropTypes.string,
+    datePosted: PropTypes.string
+  }))
 })

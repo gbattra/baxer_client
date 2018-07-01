@@ -193,7 +193,7 @@ class AppContainer extends React.Component {
       )
     } else if (this.state.currentRoute.label === 'track') {
       return (
-        <TrackPageContainer track={this.props.playingTrack} />
+        <TrackPageContainer track={this.props.playingTrack} currentRoute={this.state.currentRoute}/>
       )
     }
   }

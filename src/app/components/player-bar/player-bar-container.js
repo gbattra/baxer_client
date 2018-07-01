@@ -10,7 +10,7 @@ import {
   Button
 } from 'semantic-ui-react'
 import PlayerControls from './player-controls.js'
-import NavButton from './nav-button'
+import NavButton from '../../utils/components/nav-button'
 import { AllShapes } from '../../shapes/all-shapes'
 
 
