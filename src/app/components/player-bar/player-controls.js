@@ -10,18 +10,13 @@ import {
   Header,
   Popup
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class PlayerControls extends React.Component {
 
   static props = {
-    track: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      album_art_url: PropTypes.string
-    }).isRequired
+    track: AllShapes.track.isRequired
   }
 
   constructor(props) {
@@ -34,11 +29,11 @@ class PlayerControls extends React.Component {
         <Grid.Row stretched>
           <Grid.Column width={5}  verticalAlign='middle'>
               <Button.Group>
-                <Button basic icon='shuffle' size='medium'/>
-                <Button basic icon='step backward' size='medium'/>
-                <Button basic icon='pause' size='huge'/>
-                <Button basic icon='step forward' size='medium'/>
-                <Button basic icon='redo alternate' size='medium'/>
+                <Button basic icon='shuffle' size='medium' />
+                <Button basic icon='step backward' size='medium' />
+                <Button basic icon='pause' size='huge' />
+                <Button basic icon='step forward' size='medium' />
+                <Button basic icon='redo alternate' size='medium' />
               </Button.Group>
           </Grid.Column>
           <Grid.Column width={5} verticalAlign='middle'>
@@ -47,7 +42,7 @@ class PlayerControls extends React.Component {
             </div>
           </Grid.Column>
           <Grid.Column width={1} verticalAlign='middle'>
-            <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
           </Grid.Column>
           <Grid.Column width={4} verticalAlign='middle'>
             <Header as='h5'>

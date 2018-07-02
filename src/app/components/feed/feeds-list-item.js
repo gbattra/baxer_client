@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AllShapes } from '../../shapes/all-shapes'
 import {
   Grid,
   Container,
@@ -13,10 +14,7 @@ import {
 class FeedsListItem extends React.Component {
 
   static props = {
-    feedsListItem: PropTypes.shape({
-      name: PropTypes.string,
-      color: PropTypes.string
-    }).isRequired
+    feedsListItem: AllShapes.feedListItem.isRequired
   }
 
   state = {
@@ -34,7 +32,7 @@ class FeedsListItem extends React.Component {
           <Grid.Row>
             <Grid.Column width={13}>
               <Header as='h4'>
-                <Image circular src='https://react.semantic-ui.com/assets/images/avatar/large/patrick.png' />
+                <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' />
                 {this.props.feedsListItem.name}
               </Header>
             </Grid.Column>

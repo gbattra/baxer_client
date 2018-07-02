@@ -9,19 +9,13 @@ import {
   Icon,
   Button
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class LikedTracksListItem extends React.Component {
 
   static props = {
-    likedTracksListItem: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      album_art_url: PropTypes.string,
-      isPlaying: PropTypes.bool
-    }).isRequired,
+    likedTracksListItem: AllShapes.track.isRequired,
   }
 
   state = {
@@ -34,11 +28,11 @@ class LikedTracksListItem extends React.Component {
 
   render() {
     return (
-      <Segment>
+      <Segment color={this.props.likedTracksListItem.color}>
         <Grid verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+              <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h5'>

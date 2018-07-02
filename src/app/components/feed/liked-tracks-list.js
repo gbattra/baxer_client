@@ -11,6 +11,7 @@ import {
   Dropdown
 } from 'semantic-ui-react'
 import LikedTracksListItem from './liked-tracks-list-item'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class LikedTracksList extends React.Component {
@@ -25,14 +26,7 @@ class LikedTracksList extends React.Component {
         circular: PropTypes.bool
       })
     })),
-    likedTracksListItems: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      album_art_url: PropTypes.string,
-      isPlaying: PropTypes.bool
-    }))
+    likedTracksListItems: PropTypes.arrayOf(AllShapes.track)
   }
 
   static defaultProps = {
@@ -53,16 +47,18 @@ class LikedTracksList extends React.Component {
         title: 'Head Full of Shadows',
         author: 'The Glitch Mob',
         runtime: 120,
-        album_art_url: '',
-        isPlaying: true
+        trackArtUrl: '',
+        isPlaying: true,
+        color: 'orange'
       },
       {
         id: 1,
         title: 'Map of the Problematique',
         author: 'Muse',
         runtime: 120,
-        album_art_url: '',
-        isPlaying: false
+        trackArtUrl: '',
+        isPlaying: false,
+        color: 'red'
       }
     ]
   }

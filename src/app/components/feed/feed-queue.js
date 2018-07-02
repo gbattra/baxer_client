@@ -6,18 +6,13 @@ import {
   Header,
   Image
 } from 'semantic-ui-react'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class FeedQueue extends React.Component {
 
   static props = {
-    upcomingTracks: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      album_art_url: PropTypes.string
-    }))
+    upcomingTracks: PropTypes.arrayOf(AllShapes.track)
   }
 
   static defaultProps = {
@@ -27,42 +22,42 @@ class FeedQueue extends React.Component {
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Create',
         author: 'Overwerk',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       },
       {
         id: 1,
         title: 'Wont Stop Rocking',
         author: 'R3hab',
         runtime: 120,
-        album_art_url: ''
+        trackArtUrl: ''
       }
     ]
   }
@@ -83,7 +78,7 @@ class FeedQueue extends React.Component {
                     <Grid verticalAlign='middle'>
                       <Grid.Row>
                         <Grid.Column width={2}>
-                          <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' rounded />
+                          <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
                         </Grid.Column>
                         <Grid.Column width={14}>
                           <Header as='h5'>

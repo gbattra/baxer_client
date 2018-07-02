@@ -11,6 +11,7 @@ import {
   Dropdown
 } from 'semantic-ui-react'
 import FeedsListItem from './feeds-list-item'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class FeedsList extends React.Component {
@@ -25,10 +26,7 @@ class FeedsList extends React.Component {
         circular: PropTypes.bool
       })
     })),
-    feedsListItems: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      color: PropTypes.string
-    }))
+    feedsListItems: PropTypes.arrayOf(AllShapes.feedListItem)
   }
 
   static defaultProps = {

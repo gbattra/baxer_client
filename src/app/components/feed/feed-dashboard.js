@@ -1,6 +1,7 @@
 import './feed.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AllShapes } from '../../shapes/all-shapes'
 import {
   Grid,
   Container,
@@ -17,13 +18,7 @@ import FeedControls from './feed-controls'
 class FeedDashboard extends React.Component {
 
   static props = {
-    feedTrack: PropTypes.shape({
-      id: PropTypes.int,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      runtime: PropTypes.int,
-      album_art_url: PropTypes.string
-    }).isRequired
+    feedTrack: AllShapes.track
   }
 
   constructor(props, defaultProps) {
@@ -35,7 +30,7 @@ class FeedDashboard extends React.Component {
       <Grid padded>
         <Grid.Row stretched centered>
           <Grid.Column>
-            <FeedHeader label='My First Feed' imageUrl='https://react.semantic-ui.com/assets/images/avatar/large/patrick.png' />
+            <FeedHeader label='My First Feed' imageUrl='https://react.semantic-ui.com/images/avatar/large/patrick.png' />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
@@ -44,7 +39,7 @@ class FeedDashboard extends React.Component {
               <Grid padded centered>
                 <Grid.Row centered>
                   <Grid.Column width={6}>
-                    <Image src='https://react.semantic-ui.com/assets/images/wireframe/square-image.png' size='medium' rounded />
+                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' size='medium' rounded />
                   </Grid.Column>
                 </Grid.Row>
                 <Grid.Row stretched centered>
