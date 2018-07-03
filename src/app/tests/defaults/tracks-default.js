@@ -10,7 +10,7 @@ export const tracks = [
     trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
     shareCount: 150,
     color: 'blue',
-    trackRank: trackRanks[0]
+    trackRank: trackRanks[1]
   },
   {
     id: 1,
@@ -30,7 +30,7 @@ export const tracks = [
     trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
     shareCount: 150,
     color: 'pink',
-    trackRank: trackRanks[0]
+    trackRank: trackRanks[2]
   },
   {
     id: 1,
@@ -40,7 +40,7 @@ export const tracks = [
     trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
     shareCount: 150,
     color: 'red',
-    trackRank: trackRanks[0]
+    trackRank: trackRanks[2]
   },
   {
     id: 1,
@@ -50,6 +50,6 @@ export const tracks = [
     trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
     shareCount: 150,
     color: 'teal',
-    trackRank: trackRanks[0]
+    trackRank: trackRanks[3]
   }
 ]
