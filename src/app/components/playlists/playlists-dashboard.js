@@ -9,6 +9,7 @@ import {
 } from 'semantic-ui-react'
 import PlaylistTrack from './playlist-track'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 
 
 class PlaylistsDashboard extends React.Component {
@@ -18,60 +19,7 @@ class PlaylistsDashboard extends React.Component {
   }
 
   static defaultProps = {
-    playlist: {
-      id: 1,
-      name: 'My First Playlist',
-      trackCount: 14,
-      runtime: 180,
-      playlistArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-      color: 'teal',
-      isSelected: true,
-      tracks: [
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: '',
-          isPlaying: true
-        },
-        {
-          id: 1,
-          title: 'Wont Stop Rocking',
-          author: 'R3hab',
-          runtime: 120,
-          trackArtUrl: ''
-        },
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: ''
-        },
-        {
-          id: 1,
-          title: 'Wont Stop Rocking',
-          author: 'R3hab',
-          runtime: 120,
-          trackArtUrl: ''
-        },
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: ''
-        },
-        {
-          id: 1,
-          title: 'Wont Stop Rocking',
-          author: 'R3hab',
-          runtime: 120,
-          trackArtUrl: ''
-        }
-      ]
-    }
+    playlist: AllDefaults.playlists[0]
   }
 
   constructor(props, defaultProps) {

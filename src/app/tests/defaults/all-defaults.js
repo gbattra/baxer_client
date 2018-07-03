@@ -5,6 +5,7 @@ import { badges } from './badges-default'
 import { routes } from './routes-default'
 import { feeds } from './feeds-default'
 import { sortByOptions } from './sort-by-options-default'
+import { comments } from './comments-default'
 
 
 export const AllDefaults = {

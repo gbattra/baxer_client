@@ -1,3 +1,6 @@
+import {tracks} from './tracks-default'
+
+
 export const playlists = [
   {
     id: 1,
@@ -7,5 +10,6 @@ export const playlists = [
     playlistArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
     color: 'teal',
     isSelected: true,
+    tracks: tracks
   }
 ]

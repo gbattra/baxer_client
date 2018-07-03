@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 import {
   Grid,
   Button,
@@ -18,18 +19,7 @@ class TrackComments extends React.Component {
   }
 
   static defaultProps = {
-    comments: [
-      {
-        author: 'Broderick Attra',
-        body: 'Game changing track!',
-        datePosted: 'April 12, 2018',
-        replies: [{
-          author: 'The Glitch Mob',
-          body: 'Thanks man, you are our number one fan!',
-          datePosted: 'April 12, 2018'
-        }]
-      }
-    ]
+    comments: AllDefaults.comments
   }
 
   constructor(props, defaultProps) {
