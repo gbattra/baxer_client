@@ -7,6 +7,7 @@ import {
   Image
 } from 'semantic-ui-react'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 
 
 class FeedQueue extends React.Component {
@@ -16,50 +17,7 @@ class FeedQueue extends React.Component {
   }
 
   static defaultProps = {
-    upcomingTracks: [
-      {
-        id: 1,
-        title: 'Create',
-        author: 'Overwerk',
-        runtime: 120,
-        trackArtUrl: ''
-      },
-      {
-        id: 1,
-        title: 'Wont Stop Rocking',
-        author: 'R3hab',
-        runtime: 120,
-        trackArtUrl: ''
-      },
-      {
-        id: 1,
-        title: 'Create',
-        author: 'Overwerk',
-        runtime: 120,
-        trackArtUrl: ''
-      },
-      {
-        id: 1,
-        title: 'Wont Stop Rocking',
-        author: 'R3hab',
-        runtime: 120,
-        trackArtUrl: ''
-      },
-      {
-        id: 1,
-        title: 'Create',
-        author: 'Overwerk',
-        runtime: 120,
-        trackArtUrl: ''
-      },
-      {
-        id: 1,
-        title: 'Wont Stop Rocking',
-        author: 'R3hab',
-        runtime: 120,
-        trackArtUrl: ''
-      }
-    ]
+    upcomingTracks: AllDefaults.tracks
   }
 
   constructor(props, defaultProps) {

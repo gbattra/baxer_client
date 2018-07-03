@@ -3,7 +3,7 @@ import { playlist } from './playlist-shape'
 import { profile } from './profile-shape'
 import { route } from './route-shape'
 import { track } from './track-shape'
-import { feedListItem } from './feed-list-item'
+import { feed } from './feed-shape'
 import { trackRank } from './track-rank-shape'
 import { comment } from './comment-shape'
 import PropTypes from 'prop-types'
@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 export const AllShapes = {
   badge: badge,
   comment: comment,
-  feedListItem: feedListItem,
+  feed: feed,
   playlist: playlist,
   profile: profile,
   trackRank: trackRank,

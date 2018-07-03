@@ -12,6 +12,7 @@ import {
 } from 'semantic-ui-react'
 import LikedTracksListItem from './liked-tracks-list-item'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 
 
 class LikedTracksList extends React.Component {
@@ -30,37 +31,8 @@ class LikedTracksList extends React.Component {
   }
 
   static defaultProps = {
-    sortByOptions: [
-      {
-        text: 'Date Created',
-        value: 'dateCreated',
-        label: {
-          color: 'green',
-          empty: true,
-          circular: true
-        }
-      }
-    ],
-    likedTracksListItems: [
-      {
-        id: 1,
-        title: 'Head Full of Shadows',
-        author: 'The Glitch Mob',
-        runtime: 120,
-        trackArtUrl: '',
-        isPlaying: true,
-        color: 'orange'
-      },
-      {
-        id: 1,
-        title: 'Map of the Problematique',
-        author: 'Muse',
-        runtime: 120,
-        trackArtUrl: '',
-        isPlaying: false,
-        color: 'red'
-      }
-    ]
+    sortByOptions: AllDefaults.sortByOptions,
+    likedTracksListItems: AllDefaults.tracks
   }
 
   constructor(props, defaultProps) {

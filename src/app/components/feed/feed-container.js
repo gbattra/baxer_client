@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Segment, Container } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 import FeedDashboard from './feed-dashboard'
 import FeedsList from './feeds-list'
 import LikedTracksList from './liked-tracks-list'
@@ -13,14 +14,7 @@ class FeedContainer extends React.Component {
   }
 
   static defaultProps = {
-    feedTrack: {
-      id: 1,
-      title: 'Head Full of Shadows',
-      author: 'The Glitch Mob',
-      runtime: 120,
-      trackArtUrl: '',
-      shareCount: 150
-    }
+    feedTrack: AllDefaults.tracks[0]
   }
 
   constructor(props, defaultProps) {

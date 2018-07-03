@@ -14,7 +14,7 @@ import {
 class FeedsListItem extends React.Component {
 
   static props = {
-    feedsListItem: AllShapes.feedListItem.isRequired
+    feedsListItem: AllShapes.feed.isRequired
   }
 
   state = {

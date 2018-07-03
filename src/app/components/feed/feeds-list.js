@@ -12,6 +12,7 @@ import {
 } from 'semantic-ui-react'
 import FeedsListItem from './feeds-list-item'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 
 
 class FeedsList extends React.Component {
@@ -26,27 +27,12 @@ class FeedsList extends React.Component {
         circular: PropTypes.bool
       })
     })),
-    feedsListItems: PropTypes.arrayOf(AllShapes.feedListItem)
+    feedsListItems: PropTypes.arrayOf(AllShapes.feed)
   }
 
   static defaultProps = {
-    sortByOptions: [
-      {
-        text: 'Date Created',
-        value: 'dateCreated',
-        label: {
-          color: 'green',
-          empty: true,
-          circular: true
-        }
-      }
-    ],
-    feedsListItems: [
-      {
-        name: 'My First Feed',
-        color: 'teal'
-      }
-    ]
+    sortByOptions: AllDefaults.sortByOptions,
+    feedsListItems: AllDefaults.feeds
   }
 
   constructor(props, defaultProps) {
