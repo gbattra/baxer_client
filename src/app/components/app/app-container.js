@@ -1,5 +1,6 @@
 import './app-container.scss'
 import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Segment } from 'semantic-ui-react'
@@ -28,134 +29,10 @@ class AppContainer extends React.Component {
   }
 
   static defaultProps = {
-    profile: {
-      id: 1,
-      color: 'teal',
-      profileImageUrl: 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg',
-      name: 'Broderick Attra',
-      description: 'I make waves of air pulse through your earholes in appealing ways',
-      dateJoined: 'June, 2018',
-      location: 'Boston, MA',
-      badges: [
-        {
-          color: 'teal',
-          icon: 'map',
-          label: 'Location',
-          description: 'Where ahh you??',
-          value: 'Boston, MA'
-        },
-        {
-          color: 'purple',
-          icon: 'calendar',
-          label: 'Date Joined',
-          description: 'Never forget your Rocketyr birthday',
-          value: 'June, 2018'
-        },
-        {
-          color: 'black',
-          icon: 'rocket',
-          label: 'Rocketyr Rank',
-          description: 'The higher the rank, the better... probably',
-          value: 'Bronze'
-        },
-        {
-          color: 'yellow',
-          icon: 'bug',
-          label: 'Chatter Bug',
-          description: 'When you love a track, you make sure to let the artist know',
-          value: 'Frequent Commenter'
-        }
-      ],
-      tracks: [
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-          shareCount: 150,
-          color: 'blue'
-        },{
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-          shareCount: 150,
-          color: 'yellow'
-        },
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-          shareCount: 150,
-          color: 'pink'
-        },
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-          shareCount: 150,
-          color: 'red'
-        },
-        {
-          id: 1,
-          title: 'Create',
-          author: 'Overwerk',
-          runtime: 120,
-          trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-          shareCount: 150,
-          color: 'teal'
-        }
-      ]
-    },
-    playingTrack: {
-      id: 1,
-      title: 'Create',
-      author: 'Overwerk',
-      runtime: 120,
-      trackArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-      shareCount: 150,
-      trackRank: {
-        color: 'olive',
-        icon: 'chess knight',
-        label: 'knight',
-        value: 1000
-      }
-    },
-    playlists: [
-      {
-        id: 1,
-        name: 'My First Playlist',
-        trackCount: 14,
-        runtime: 180,
-        playlistArtUrl: 'https://react.semantic-ui.com/images/wireframe/square-image.png',
-        color: 'teal',
-        isSelected: true,
-      }
-    ],
-    allRoutes: [
-      {
-        label: 'profile',
-        image: 'https://react.semantic-ui.com/images/avatar/small/molly.png'
-      },
-      {
-        label: 'playlists',
-        image: 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'
-      },
-      {
-        label: 'feed',
-        image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
-      },
-      {
-        label: 'track',
-        image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
-      }
-    ]
+    profile: AllDefaults.profile,
+    playingTrack: AllDefaults.tracks[0],
+    playlists: AllDefaults.playlists,
+    allRoutes: AllDefaults.routes
   }
 
   state = {
