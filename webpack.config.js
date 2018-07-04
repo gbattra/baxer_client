@@ -14,8 +14,15 @@ module.exports =  {
     inline: true,
     port: port,
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    open: true
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico'
+    })
+  ],
   module: {
     rules: [
        {
