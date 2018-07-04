@@ -9,6 +9,7 @@ import PlayerBarContainer from '../player-bar/player-bar-container'
 import PlaylistsContainer from '../playlists/playlists-container'
 import ProfileContainer from '../profile/profile-container'
 import TrackPageContainer from '../track/track-page-container'
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
 
 const ROUTES = {
@@ -77,23 +78,25 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <Grid celled='internally' className='app-container'>
-        <Grid.Row stretched>
-          <Grid.Column width={16} className='dashboard-container'>
-            {this.getDashboardComponent()}
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={16}>
-            <PlayerBarContainer
-              playingTrack={this.props.playingTrack}
-              updateRouteState={this.updateRouteState}
-              leftNavRoute={this.state.leftNavRoute}
-              rightNavRoute={this.state.rightNavRoute}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <BrowserRouter>
+        <Grid celled='internally' className='app-container'>
+          <Grid.Row stretched>
+            <Grid.Column width={16} className='dashboard-container'>
+              <Route path='/feed' render={() => this.getDashboardComponent()} />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={16}>
+              <PlayerBarContainer
+                playingTrack={this.props.playingTrack}
+                updateRouteState={this.updateRouteState}
+                leftNavRoute={this.state.leftNavRoute}
+                rightNavRoute={this.state.rightNavRoute}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </BrowserRouter>
     )
   }
 }
