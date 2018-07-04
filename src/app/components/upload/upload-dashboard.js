@@ -22,22 +22,22 @@ class UploadDashboard extends React.Component {
   render() {
     return (
       <Grid padded>
-        <Grid.Row padded stretched centered>
+        <Grid.Row stretched centered>
           <Grid.Column>
-          <Header as='h3' icon>
-            <Icon name='sign out alternate' rotated='counterclockwise' color='violet'/>
-            Track Upload
-            <Header.Subheader>{"Ready to show the world what you've made?"}</Header.Subheader>
-          </Header>
+            <Header as='h3' icon>
+              <Icon name='sign out alternate' rotated='counterclockwise' color='violet'/>
+              Track Upload
+              <Header.Subheader>{"Ready to show the world what you've made?"}</Header.Subheader>
+            </Header>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row padded centered>
+        <Grid.Row centered>
           <Grid.Column verticalAlign='middle'>
             <TrackSteps stage={1} />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row padded centered stretched>
-          <Grid.Column padded width={13} verticalAlign='middle'>
+        <Grid.Row centered stretched>
+          <Grid.Column width={13} verticalAlign='middle'>
             <Dropzone
               accept='audio/mpeg, audio/m4a, audio/mp3'
               onDrop={this.onDrop}
@@ -46,19 +46,21 @@ class UploadDashboard extends React.Component {
               acceptClassName='accept-dropzone'
               rejectClassName='reject-dropzone'
             >
-              <Grid.Row centered>
-                Drag and drop track here
-              </Grid.Row>
-              <Grid.Row centered>
-                <Button icon labelPosition='right' size='large'>
-                  Browse
-                  <Icon name='search'/>
-                </Button>
-              </Grid.Row>
+              <div className='dropzone-content-wrapper'>
+                <Grid.Row centered>
+                  Drag and drop track here
+                </Grid.Row>
+                <Grid.Row centered>
+                  <Button icon labelPosition='right' size='large'>
+                    Browse
+                    <Icon name='search'/>
+                  </Button>
+                </Grid.Row>
+              </div>
             </Dropzone>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row padded centered>
+        <Grid.Row centered>
           <Button color='teal' size='large'>
             Next
             <Icon name='right arrow'/>
