@@ -32,7 +32,7 @@ class TrackRank extends React.Component {
     return (
       <Header as={hSize} block={isMainRank} icon color={trackRank.color}>
         <Icon name={trackRank.icon} />
-          <span style={{'text-transform':'uppercase'}}>{trackRank.label}</span>
+          <span style={{'textTransform':'uppercase'}}>{trackRank.label}</span>
         <Header.Subheader>{subheader}</Header.Subheader>
       </Header>
     )
@@ -46,9 +46,9 @@ class TrackRank extends React.Component {
           <Header as='h5' subheader="Track ranks are determined by the number of shares the track has. The more shares, the higher the rank" />
           <Segment.Group horizontal>
             {this.props.trackRanks.map(
-              (trackRank) => {
+              (trackRank, i) => {
                 return (
-                  <Segment padded tertiary textAlign='center'>
+                  <Segment padded tertiary textAlign='center' key={i}>
                     {this.trackRankHeader(trackRank, false)}
                   </Segment>
                 )

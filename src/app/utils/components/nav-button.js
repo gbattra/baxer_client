@@ -27,10 +27,10 @@ class NavButton extends React.Component {
   }
 
   render() {
-    const alignment = this.props.icon ? 'left ' : ''
+    const alignment = this.props.icon ? 'left' : 'center'
     return (
       <Button basic className='fw' onClick={this.onButtonClick}>
-        <Header as='h4' textAlign={alignment} style={{'text-transform':'capitalize'}}>
+        <Header as='h4' textAlign={alignment} style={{'textTransform':'capitalize'}}>
         {this.props.icon ? (
           <Icon circular bordered name='arrow left' size='large' />
         ) : (

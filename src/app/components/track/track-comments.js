@@ -39,9 +39,9 @@ class TrackComments extends React.Component {
                   <Input placeholder='Comment' className="add-comment"/>
                 </Comment.Content>
               </Comment>
-              {this.props.comments.map((comment) => {
+              {this.props.comments.map((comment, i) => {
                 return (
-                  <Comment>
+                  <Comment key={i}>
                     <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
                     <Comment.Content>
                       <Comment.Author as='a'>{comment.author}</Comment.Author>
@@ -54,9 +54,9 @@ class TrackComments extends React.Component {
                       </Comment.Actions>
                     </Comment.Content>
                     <Comment.Group>
-                    {comment.replies.map((reply) => {
+                    {comment.replies.map((reply, i) => {
                       return (
-                          <Comment>
+                          <Comment key={i}>
                           <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
                           <Comment.Content>
                             <Comment.Author as='a'>{reply.author}</Comment.Author>

@@ -31,7 +31,7 @@ class TrackControls extends React.Component {
           </Grid.Column>
           <Grid.Column width={6} verticalAlign='middle'>
             <div>
-              <Progress percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'margin-bottom':'0'}} />
+              <Progress percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'marginBottom':'0'}} />
             </div>
           </Grid.Column>
           <Grid.Column width={4} verticalAlign='middle'>
