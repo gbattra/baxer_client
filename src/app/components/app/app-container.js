@@ -56,33 +56,16 @@ class AppContainer extends React.Component {
     })
   }
 
-  getDashboardComponent = () => {
-    if (this.state.currentRoute.label === 'feed') {
-      return (
-        <FeedContainer />
-      )
-    } else if (this.state.currentRoute.label === 'profile') {
-      return (
-        <ProfileContainer profile={this.props.profile}/>
-      )
-    } else if (this.state.currentRoute.label === 'playlists') {
-      return (
-        <PlaylistsContainer playlists={this.props.playlists}/>
-      )
-    } else if (this.state.currentRoute.label === 'track') {
-      return (
-        <TrackPageContainer track={this.props.playingTrack} currentRoute={this.state.currentRoute}/>
-      )
-    }
-  }
-
   render() {
     return (
       <BrowserRouter>
         <Grid celled='internally' className='app-container'>
           <Grid.Row stretched>
             <Grid.Column width={16} className='dashboard-container'>
-              <Route path='/feed' render={() => this.getDashboardComponent()} />
+              <Route path='/feed' render={() => <FeedContainer />} />
+              <Route path='/profile' render={() => <ProfileContainer profile={this.props.profile}/>} />
+              <Route path='/playlists' render={() => <PlaylistsContainer playlists={this.props.playlists}/>} />
+              <Route path='/track' render={() => <TrackPageContainer track={this.props.playingTrack} currentRoute={this.state.currentRoute}/>} />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
