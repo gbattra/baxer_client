@@ -15,8 +15,7 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 const ROUTES = {
   PROFILE: 0,
   PLAYLISTS: 1,
-  FEED: 2,
-  TRACK: 3
+  FEED: 2
 }
 
 
@@ -37,7 +36,7 @@ class AppContainer extends React.Component {
   }
 
   state = {
-    currentRoute: this.props.allRoutes[ROUTES.TRACK],
+    currentRoute: this.props.allRoutes[ROUTES.PROFILE],
     leftNavRoute: this.props.allRoutes[ROUTES.FEED],
     rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
   }
@@ -64,8 +63,15 @@ class AppContainer extends React.Component {
             <Grid.Column width={16} className='dashboard-container'>
               <Route path='/feed' render={() => <FeedContainer />} />
               <Route path='/profile' render={() => <ProfileContainer profile={this.props.profile}/>} />
-              <Route path='/playlists' render={() => <PlaylistsContainer playlists={this.props.playlists}/>} />
-              <Route path='/track' render={() => <TrackPageContainer track={this.props.playingTrack} currentRoute={this.state.currentRoute}/>} />
+              <Route path='/playlists' render={() => <PlaylistsContainer
+                                                        playlists={this.props.playlists}
+                                                      />}
+              />
+              <Route path='/track' render={() => <TrackPageContainer
+                                                    track={this.props.playingTrack}
+                                                    currentRoute={this.state.currentRoute}
+                                                  />}
+              />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

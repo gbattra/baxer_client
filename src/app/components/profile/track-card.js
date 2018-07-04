@@ -23,7 +23,11 @@ class TrackCard extends React.Component {
   render() {
     if (this.props.userIsOwner) {
       return (
-        <Card color={this.props.track.color} image={this.props.track.trackArtUrl} header={this.props.track.title} link extra={
+        <Card
+          href='/track'
+          color={this.props.track.color}
+          image={this.props.track.trackArtUrl}
+          header={this.props.track.title} link extra={
           <Grid columns='equal' textAlign='center'>
             <Grid.Column>
               <Popup trigger={
