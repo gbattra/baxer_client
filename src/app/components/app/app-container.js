@@ -3,7 +3,6 @@ import { AllShapes } from '../../shapes/all-shapes'
 import { AllDefaults } from '../../tests/defaults/all-defaults'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import { Grid, Segment } from 'semantic-ui-react'
 import FeedContainer from '../feed/feed-container'
 import PlayerBarContainer from '../player-bar/player-bar-container'
@@ -78,25 +77,23 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <Grid celled='internally' className='app-container'>
-          <Grid.Row stretched>
-            <Grid.Column width={16} className='dashboard-container'>
-              {this.getDashboardComponent()}
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={16}>
-              <PlayerBarContainer
-                playingTrack={this.props.playingTrack}
-                updateRouteState={this.updateRouteState}
-                leftNavRoute={this.state.leftNavRoute}
-                rightNavRoute={this.state.rightNavRoute}
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </BrowserRouter>
+      <Grid celled='internally' className='app-container'>
+        <Grid.Row stretched>
+          <Grid.Column width={16} className='dashboard-container'>
+            {this.getDashboardComponent()}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <PlayerBarContainer
+              playingTrack={this.props.playingTrack}
+              updateRouteState={this.updateRouteState}
+              leftNavRoute={this.state.leftNavRoute}
+              rightNavRoute={this.state.rightNavRoute}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
   }
 }

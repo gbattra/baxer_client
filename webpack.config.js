@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = process.env.PORT || 3000;
 
@@ -17,12 +16,6 @@ module.exports =  {
     historyApiFallback: true,
     open: true
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      favicon: 'public/favicon.ico'
-    })
-  ],
   module: {
     rules: [
        {

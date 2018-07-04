@@ -1,7 +1,7 @@
 import './app.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AppContainer from './src/app/components/app/app-container'
+import App from './App'
 
 
-ReactDOM.render(<AppContainer />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
