@@ -61,17 +61,20 @@ class AppContainer extends React.Component {
         <Grid celled='internally' className='app-container'>
           <Grid.Row stretched>
             <Grid.Column width={16} className='dashboard-container'>
-              <Route path='/feed' render={() => <FeedContainer />} />
-              <Route path='/profile' render={() => <ProfileContainer profile={this.props.profile}/>} />
-              <Route path='/playlists' render={() => <PlaylistsContainer
-                                                        playlists={this.props.playlists}
-                                                      />}
-              />
-              <Route path='/track' render={() => <TrackPageContainer
-                                                    track={this.props.playingTrack}
-                                                    currentRoute={this.state.currentRoute}
-                                                  />}
-              />
+              <Switch>
+                <Route path='/feed' exact render={() => <FeedContainer />} />
+                <Route path='/profile' exact render={() => <ProfileContainer profile={this.props.profile}/>} />
+                <Route path='/profile/upload' exact render={() => <div>Hello</div>} />
+                <Route path='/playlists' exact render={() => <PlaylistsContainer
+                                                          playlists={this.props.playlists}
+                                                        />}
+                />
+                <Route path='/track' exact render={() => <TrackPageContainer
+                                                      track={this.props.playingTrack}
+                                                      currentRoute={this.state.currentRoute}
+                                                    />}
+                />
+              </Switch>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

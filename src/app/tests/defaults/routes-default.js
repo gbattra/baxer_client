@@ -10,9 +10,5 @@ export const routes = [
   {
     label: 'feed',
     image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
-  },
-  {
-    label: 'track',
-    image: 'https://react.semantic-ui.com/images/avatar/large/patrick.png'
   }
 ]
