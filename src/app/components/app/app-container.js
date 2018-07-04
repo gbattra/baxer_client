@@ -9,6 +9,7 @@ import PlayerBarContainer from '../player-bar/player-bar-container'
 import PlaylistsContainer from '../playlists/playlists-container'
 import ProfileContainer from '../profile/profile-container'
 import TrackPageContainer from '../track/track-page-container'
+import UploadPageContainer from '../upload/upload-page-container'
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -64,7 +65,7 @@ class AppContainer extends React.Component {
               <Switch>
                 <Route path='/feed' exact render={() => <FeedContainer />} />
                 <Route path='/profile' exact render={() => <ProfileContainer profile={this.props.profile}/>} />
-                <Route path='/profile/upload' exact render={() => <div>Hello</div>} />
+                <Route path='/profile/upload' exact render={() => <UploadPageContainer />} />
                 <Route path='/playlists' exact render={() => <PlaylistsContainer
                                                           playlists={this.props.playlists}
                                                         />}
@@ -78,14 +79,18 @@ class AppContainer extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={16}>
-              <PlayerBarContainer
-                playingTrack={this.props.playingTrack}
-                updateRouteState={this.updateRouteState}
-                leftNavRoute={this.state.leftNavRoute}
-                rightNavRoute={this.state.rightNavRoute}
-              />
-            </Grid.Column>
+            <Route path='/' render={() => {
+                return (
+                  <Grid.Column width={16}>
+                    <PlayerBarContainer
+                      playingTrack={this.props.playingTrack}
+                      updateRouteState={this.updateRouteState}
+                      leftNavRoute={this.state.leftNavRoute}
+                      rightNavRoute={this.state.rightNavRoute}
+                    />
+                  </Grid.Column>
+              )
+            }} />
           </Grid.Row>
         </Grid>
       </BrowserRouter>
