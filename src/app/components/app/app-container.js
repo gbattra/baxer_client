@@ -82,7 +82,7 @@ class AppContainer extends React.Component {
         <Grid celled='internally' className='app-container'>
           <Grid.Row stretched>
             <Grid.Column width={16} className='dashboard-container'>
-              <Route path={`/${this.state.currentRoute.label}`} component={this.getDashboardComponent()}/>
+              {this.getDashboardComponent()}
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

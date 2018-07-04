@@ -6,6 +6,7 @@ import { routes } from './routes-default'
 import { feeds } from './feeds-default'
 import { sortByOptions } from './sort-by-options-default'
 import { comments } from './comments-default'
+import { trackRanks } from './track-ranks-default'
 
 
 export const AllDefaults = {
@@ -15,5 +16,6 @@ export const AllDefaults = {
   profile: profile,
   routes: routes,
   sortByOptions: sortByOptions,
-  tracks: tracks
+  tracks: tracks,
+  trackRanks: trackRanks
 }
