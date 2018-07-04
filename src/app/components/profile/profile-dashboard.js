@@ -39,7 +39,7 @@ class ProfileDashboard extends React.Component {
             <Link to='/profile/upload'>
               <Button icon labelPosition='right' size='large' floated='right'>
                 Upload
-                <Icon name='sign out alternate' rotated='counterclockwise'/>
+                <Icon name='sign out alternate' rotated='counterclockwise' color='violet'/>
               </Button>
             </Link>
           </Grid.Column>
