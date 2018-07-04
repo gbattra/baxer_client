@@ -9,14 +9,14 @@ import PlayerBarContainer from '../player-bar/player-bar-container'
 import PlaylistsContainer from '../playlists/playlists-container'
 import ProfileContainer from '../profile/profile-container'
 import TrackPageContainer from '../track/track-page-container'
+import UploadPageContainer from '../upload/upload-page-container'
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
 
 const ROUTES = {
   PROFILE: 0,
   PLAYLISTS: 1,
-  FEED: 2,
-  TRACK: 3
+  FEED: 2
 }
 
 
@@ -37,7 +37,7 @@ class AppContainer extends React.Component {
   }
 
   state = {
-    currentRoute: this.props.allRoutes[ROUTES.TRACK],
+    currentRoute: this.props.allRoutes[ROUTES.PROFILE],
     leftNavRoute: this.props.allRoutes[ROUTES.FEED],
     rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
   }
@@ -56,44 +56,41 @@ class AppContainer extends React.Component {
     })
   }
 
-  getDashboardComponent = () => {
-    if (this.state.currentRoute.label === 'feed') {
-      return (
-        <FeedContainer />
-      )
-    } else if (this.state.currentRoute.label === 'profile') {
-      return (
-        <ProfileContainer profile={this.props.profile}/>
-      )
-    } else if (this.state.currentRoute.label === 'playlists') {
-      return (
-        <PlaylistsContainer playlists={this.props.playlists}/>
-      )
-    } else if (this.state.currentRoute.label === 'track') {
-      return (
-        <TrackPageContainer track={this.props.playingTrack} currentRoute={this.state.currentRoute}/>
-      )
-    }
-  }
-
   render() {
     return (
       <BrowserRouter>
         <Grid celled='internally' className='app-container'>
           <Grid.Row stretched>
             <Grid.Column width={16} className='dashboard-container'>
-              <Route path='/feed' render={() => this.getDashboardComponent()} />
+              <Switch>
+                <Route path='/feed' exact render={() => <FeedContainer />} />
+                <Route path='/profile' exact render={() => <ProfileContainer profile={this.props.profile}/>} />
+                <Route path='/profile/upload' exact render={() => <UploadPageContainer />} />
+                <Route path='/playlists' exact render={() => <PlaylistsContainer
+                                                          playlists={this.props.playlists}
+                                                        />}
+                />
+                <Route path='/track' exact render={() => <TrackPageContainer
+                                                      track={this.props.playingTrack}
+                                                      currentRoute={this.state.currentRoute}
+                                                    />}
+                />
+              </Switch>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={16}>
-              <PlayerBarContainer
-                playingTrack={this.props.playingTrack}
-                updateRouteState={this.updateRouteState}
-                leftNavRoute={this.state.leftNavRoute}
-                rightNavRoute={this.state.rightNavRoute}
-              />
-            </Grid.Column>
+            <Route path='/' render={() => {
+                return (
+                  <Grid.Column width={16}>
+                    <PlayerBarContainer
+                      playingTrack={this.props.playingTrack}
+                      updateRouteState={this.updateRouteState}
+                      leftNavRoute={this.state.leftNavRoute}
+                      rightNavRoute={this.state.rightNavRoute}
+                    />
+                  </Grid.Column>
+              )
+            }} />
           </Grid.Row>
         </Grid>
       </BrowserRouter>

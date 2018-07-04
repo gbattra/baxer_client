@@ -10,6 +10,7 @@ import {
 } from 'semantic-ui-react'
 import TrackCard from './track-card'
 import { AllShapes } from '../../shapes/all-shapes'
+import { Link } from 'react-router-dom'
 
 
 class ProfileDashboard extends React.Component {
@@ -35,10 +36,12 @@ class ProfileDashboard extends React.Component {
             <Search fluid className="search-container" />
           </Grid.Column>
           <Grid.Column width={3}>
-            <Button icon labelPosition='right' size='large' floated='right'>
-              Upload
-              <Icon name='sign out alternate' rotated='counterclockwise'/>
-            </Button>
+            <Link to='/profile/upload'>
+              <Button icon labelPosition='right' size='large' floated='right'>
+                Upload
+                <Icon name='sign out alternate' rotated='counterclockwise'/>
+              </Button>
+            </Link>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>

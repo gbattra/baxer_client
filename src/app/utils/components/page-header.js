@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Header, Image } from 'semantic-ui-react'
+import { Grid, Header, Image, Icon } from 'semantic-ui-react'
 
 
 class PageHeader extends React.Component {
@@ -21,11 +21,11 @@ class PageHeader extends React.Component {
         <Grid.Row>
           <Header as='h2'>
             {this.props.icon.length > 0 ? (
-              <Icon size='medium' name={this.props.icon} />
+              <Icon size='large' name={this.props.icon} />
             ) : (
               <Image circular src={this.props.imageUrl} />
             )}
-            {this.props.label}
+            <span style={{'textTransform':'capitalize'}}>{this.props.label}</span>
           </Header>
         </Grid.Row>
       </Grid>

@@ -7,6 +7,7 @@ import {
   Icon
 } from 'semantic-ui-react'
 import { AllShapes } from '../../shapes/all-shapes'
+import { Link } from 'react-router-dom';
 
 
 class NavButton extends React.Component {
@@ -29,16 +30,18 @@ class NavButton extends React.Component {
   render() {
     const alignment = this.props.icon ? 'left' : 'center'
     return (
-      <Button basic className='fw' onClick={this.onButtonClick}>
-        <Header as='h4' textAlign={alignment} style={{'textTransform':'capitalize'}}>
-        {this.props.icon ? (
-          <Icon circular bordered name='arrow left' size='large' />
-        ) : (
-          <Image circular src={this.props.route.image} />
-        )}
-          {this.props.route.label}
-        </Header>
-      </Button>
+      <Link to={`/${this.props.route.label}`}>
+        <Button basic className='fw' onClick={this.onButtonClick}>
+          <Header as='h4' textAlign={alignment} style={{'textTransform':'capitalize'}}>
+          {this.props.icon ? (
+            <Icon circular bordered name='arrow left' size='large' />
+          ) : (
+            <Image circular src={this.props.route.image} />
+          )}
+            {this.props.route.label}
+          </Header>
+        </Button>
+      </Link>
     )
   }
 }
