@@ -9,14 +9,40 @@ import {
   Image,
   Button
 } from 'semantic-ui-react'
-import Dropzone from 'react-dropzone'
 import TrackSteps from './track-steps'
+import FileUploadStage from './file-upload-stage'
+import EditNewTrackInfo from './edit-new-track-info'
+import SubmitNewTrack from './submit-new-track'
 
 
 class UploadDashboard extends React.Component {
 
-  onDrop = (yesFiles, noFiles) => {
-      debugger;
+  state = {
+    stage: 2
+  }
+
+  setStage = (dir) => {
+    this.setState((prevState) => {
+      const val = dir === 'next' ? prevState.stage + 1 : prevState.stage - 1
+      return {
+        stage: val
+      }
+    })
+  }
+
+  getUploadStageContent = () => {
+    const stage = this.state.stage
+    let content = <FileUploadStage />
+    if (stage === 2) {
+      content = <EditNewTrackInfo />
+    } else if (stage === 3) {
+      content = <SubmitNewTrack />
+    }
+    return content
+  }
+
+  submitTrack = () => {
+
   }
 
   render() {
@@ -25,7 +51,7 @@ class UploadDashboard extends React.Component {
         <Grid.Row stretched centered>
           <Grid.Column>
             <Header as='h3' icon>
-              <Icon name='sign out alternate' rotated='counterclockwise' color='violet'/>
+              <Icon name='sign out alternate' rotated='counterclockwise' color='red'/>
               Track Upload
               <Header.Subheader>{"Ready to show the world what you've made?"}</Header.Subheader>
             </Header>
@@ -33,38 +59,32 @@ class UploadDashboard extends React.Component {
         </Grid.Row>
         <Grid.Row centered>
           <Grid.Column verticalAlign='middle'>
-            <TrackSteps stage={1} />
+            <TrackSteps stage={this.state.stage} />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered stretched>
           <Grid.Column width={13} verticalAlign='middle'>
-            <Dropzone
-              accept='audio/mpeg, audio/m4a, audio/mp3'
-              onDrop={this.onDrop}
-              className='dropzone'
-              activeClassName='active-dropzone'
-              acceptClassName='accept-dropzone'
-              rejectClassName='reject-dropzone'
-            >
-              <div className='dropzone-content-wrapper'>
-                <Grid.Row centered>
-                  Drag and drop track here
-                </Grid.Row>
-                <Grid.Row centered>
-                  <Button icon labelPosition='right' size='large'>
-                    Browse
-                    <Icon name='search'/>
-                  </Button>
-                </Grid.Row>
-              </div>
-            </Dropzone>
+            {this.getUploadStageContent()}
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
-          <Button color='teal' size='large'>
-            Next
-            <Icon name='right arrow'/>
-          </Button>
+          {this.state.stage > 1 ? (
+            <Button color='grey' size='large' onClick={this.setStage.bind(null, 'back')}>
+            <Icon name='left arrow'/>
+              Back
+            </Button>
+          ) : (<div></div>)}
+          {this.state.stage < 3 ? (
+            <Button color='teal' size='large' onClick={this.setStage.bind(null, 'next')}>
+              Next
+              <Icon name='right arrow'/>
+            </Button>
+          ) : (
+            <Button color='green' size='large' onClick={this.submitTrack}>
+              Submit
+            </Button>
+          )}
+
         </Grid.Row>
       </Grid>
     )

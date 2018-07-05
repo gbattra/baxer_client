@@ -10,9 +10,10 @@ class TrackSteps extends React.Component {
   }
 
   render() {
+    const { stage } = this.props
     return (
       <Step.Group style={{'textAlign':'left'}}>
-        <Step active>
+        <Step active={stage === 1} complete={(stage > 1).toString()}>
           <Icon name='music' />
           <Step.Content>
             <Step.Title>{'File Upload'}</Step.Title>
@@ -20,7 +21,7 @@ class TrackSteps extends React.Component {
           </Step.Content>
         </Step>
 
-        <Step disabled>
+        <Step active={stage === 2} disabled={stage < 2} complete={(stage > 2).toString()}>
           <Icon name='edit' />
           <Step.Content>
             <Step.Title>Track Info</Step.Title>
@@ -28,7 +29,7 @@ class TrackSteps extends React.Component {
           </Step.Content>
         </Step>
 
-        <Step disabled>
+        <Step active={stage === 3} disabled={stage < 3} complete={(stage > 3).toString()}>
           <Icon name='checkmark' />
           <Step.Content>
             <Step.Title>Submit</Step.Title>
