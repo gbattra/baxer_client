@@ -1,6 +1,8 @@
 import './upload.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { AllShapes } from '../../shapes/all-shapes'
+import { AllDefaults } from '../../tests/defaults/all-defaults'
 import {
   Grid,
   Header,
@@ -17,8 +19,17 @@ import SubmitNewTrack from './submit-new-track'
 
 class UploadDashboard extends React.Component {
 
+  static props = {
+    track: AllShapes.track.isRequired
+  }
+
+  static defaultProps = {
+    track: AllDefaults.tracks[0]
+  }
+
   state = {
-    stage: 2
+    stage: 3,
+    track: this.props.track
   }
 
   setStage = (dir) => {
@@ -31,12 +42,12 @@ class UploadDashboard extends React.Component {
   }
 
   getUploadStageContent = () => {
-    const stage = this.state.stage
-    let content = <FileUploadStage />
+    const { stage, track } = this.state
+    let content = <FileUploadStage track={track} />
     if (stage === 2) {
-      content = <EditNewTrackInfo />
+      content = <EditNewTrackInfo track={track} />
     } else if (stage === 3) {
-      content = <SubmitNewTrack />
+      content = <SubmitNewTrack track={track} />
     }
     return content
   }

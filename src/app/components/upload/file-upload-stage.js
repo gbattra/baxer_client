@@ -6,9 +6,18 @@ import {
   Icon
 } from 'semantic-ui-react'
 import Dropzone from 'react-dropzone'
+import { AllShapes } from '../../shapes/all-shapes'
 
 
 class FileUploadStage extends React.Component {
+
+  static props = {
+    track: AllShapes.track.isRequired
+  }
+
+  constructor(props) {
+    super(props)
+  }
 
   onDrop = (yesFiles, noFiles) => {
       debugger;

@@ -15,6 +15,7 @@ import { Dropdown } from 'semantic-ui-react'
 class EditNewTrackInfo extends React.Component {
 
   static props = {
+    track: AllShapes.track.isRequired,
     genres: PropTypes.arrayOf(AllShapes.genre)
   }
 
@@ -40,7 +41,7 @@ class EditNewTrackInfo extends React.Component {
               />
             } content={
               <div>
-                <bold>Click</bold> to upload track art. Otherwise, Rocketyr will use default art for this track.
+                <strong>Click to upload</strong> track art. Otherwise, Rocketyr will use default art for this track.
               </div>
             } />
           </Grid.Column>

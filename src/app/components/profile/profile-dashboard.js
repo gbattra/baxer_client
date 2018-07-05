@@ -8,7 +8,7 @@ import {
   Card,
   Icon
 } from 'semantic-ui-react'
-import TrackCard from './track-card'
+import TrackCard from '../track/track-card'
 import { AllShapes } from '../../shapes/all-shapes'
 import { Link } from 'react-router-dom'
 
