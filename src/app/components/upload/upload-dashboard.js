@@ -28,7 +28,7 @@ class UploadDashboard extends React.Component {
   }
 
   state = {
-    stage: 3,
+    stage: 1,
     track: this.props.track
   }
 

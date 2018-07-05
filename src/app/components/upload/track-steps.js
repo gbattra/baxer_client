@@ -12,7 +12,7 @@ class TrackSteps extends React.Component {
   render() {
     const { stage } = this.props
     return (
-      <Step.Group style={{'textAlign':'left'}}>
+      <Step.Group size='tiny' style={{'textAlign':'left'}}>
         <Step active={stage === 1} complete={(stage > 1).toString()}>
           <Icon name='music' />
           <Step.Content>
