@@ -23,8 +23,8 @@ class ProfileBadgesList extends React.Component {
   render() {
     return (
       <div style={{'padding':'1em'}}>
-        <Popup inverted trigger = {
-          <Header block as='h3'>
+        <Popup inverted position='bottom left' trigger = {
+          <Header dividing as='h3'>
             <Icon name='certificate' />
             Badges
           </Header>

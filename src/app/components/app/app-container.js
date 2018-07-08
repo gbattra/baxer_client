@@ -37,6 +37,7 @@ class AppContainer extends React.Component {
   }
 
   state = {
+    playingTrack: AllDefaults.tracks[0],
     currentRoute: this.props.allRoutes[ROUTES.PROFILE],
     leftNavRoute: this.props.allRoutes[ROUTES.FEED],
     rightNavRoute: this.props.allRoutes[ROUTES.PLAYLISTS]
@@ -71,7 +72,7 @@ class AppContainer extends React.Component {
                                                         />}
                 />
                 <Route path='/track' exact render={() => <TrackPageContainer
-                                                      track={this.props.playingTrack}
+                                                      track={this.state.playingTrack}
                                                       currentRoute={this.state.currentRoute}
                                                     />}
                 />
@@ -83,7 +84,7 @@ class AppContainer extends React.Component {
                 return (
                   <Grid.Column width={16}>
                     <PlayerBarContainer
-                      playingTrack={this.props.playingTrack}
+                      playingTrack={this.state.playingTrack}
                       updateRouteState={this.updateRouteState}
                       leftNavRoute={this.state.leftNavRoute}
                       rightNavRoute={this.state.rightNavRoute}
