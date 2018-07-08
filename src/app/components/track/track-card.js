@@ -13,11 +13,16 @@ class TrackCard extends React.Component {
 
   static props = {
     track: AllShapes.track,
-    userIsOwner: PropTypes.bool
+    userIsOwner: PropTypes.bool,
+    sideButtonsDisabled: PropTypes.bool
   }
 
-  constructor(props) {
-    super(props)
+  state = {
+    sideButtonsDisabled: this.props.sideButtonsDisabled
+  }
+
+  constructor(props, defaultProps) {
+    super(props, defaultProps)
   }
 
   render() {
@@ -31,16 +36,16 @@ class TrackCard extends React.Component {
           <Grid columns='equal' textAlign='center'>
             <Grid.Column>
               <Popup trigger={
-                <Button basic floated='left' icon='heartbeat' />
+                <Button basic floated='left' icon='heartbeat' disabled={this.state.sideButtonsDisabled} />
               } content={
                 "View this track's stat sheet"
               } inverted position='right center' />
             </Grid.Column>
             <Grid.Column>
-              <Button basic centered icon='play' />
+              <Button basic centered='true' icon='play' />
             </Grid.Column>
             <Grid.Column>
-              <Button basic floated='right' icon='horizontal ellipsis'  />
+              <Button basic floated='right' icon='horizontal ellipsis' disabled={this.state.sideButtonsDisabled} />
             </Grid.Column>
           </Grid>
         }/>
@@ -53,7 +58,7 @@ class TrackCard extends React.Component {
               <Button basic floated='left' icon='heart' />
             </Grid.Column>
             <Grid.Column>
-              <Button basic centered icon='play' />
+              <Button basic centered='true' icon='play' />
             </Grid.Column>
             <Grid.Column>
               <Button basic floated='right' icon='comment' />

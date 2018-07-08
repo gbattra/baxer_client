@@ -1,0 +1,43 @@
+.dropzone {
+  height: 250px;
+  border-width: 2px;
+  border-color: grey;
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.active-dropzone {
+  height: 250px;
+  border-width: 2px;
+  border-color: blue;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.accept-dropzone {
+  height: 250px;
+  border-width: 2px;
+  border-color: green;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.reject-dropzone {
+  height: 250px;
+  border-width: 2px;
+  border-color: red;
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.dropzone-content-wrapper {
+  margin-top: 65px;
+
+  .row {
+    padding: 0.5em;
+  }
+}
+
+.image-button {
+  cursor: pointer;
+}

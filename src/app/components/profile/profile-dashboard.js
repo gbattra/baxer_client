@@ -8,7 +8,7 @@ import {
   Card,
   Icon
 } from 'semantic-ui-react'
-import TrackCard from './track-card'
+import TrackCard from '../track/track-card'
 import { AllShapes } from '../../shapes/all-shapes'
 import { Link } from 'react-router-dom'
 
@@ -39,7 +39,7 @@ class ProfileDashboard extends React.Component {
             <Link to='/profile/upload'>
               <Button icon labelPosition='right' size='large' floated='right'>
                 Upload
-                <Icon name='sign out alternate' rotated='counterclockwise'/>
+                <Icon name='sign out alternate' rotated='counterclockwise' color='red'/>
               </Button>
             </Link>
           </Grid.Column>
