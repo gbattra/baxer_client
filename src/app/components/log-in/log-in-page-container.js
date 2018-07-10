@@ -4,13 +4,16 @@ import PropTypes from 'prop-types'
 import {
   Grid
 } from 'semantic-ui-react'
+import LogInForm from './log-in-form'
 
 
 class LogInPageContainer extends React.Component {
 
   render() {
     return (
-      <Grid centered padded className='fw fh'></Grid>
+      <LogInForm />
     )
   }
 }
+
+export default LogInPageContainer
