@@ -43,7 +43,11 @@ module.exports =  {
               loader: "sass-loader"
             }
           ]
-        }
+        },
+        {
+          test: /\.ya?ml$/,
+          use: 'js-yaml-loader',
+        },
     ]
   }
 }

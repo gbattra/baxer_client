@@ -24,6 +24,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
+    "j-toker": "0.0.10-beta3",
+    "js-yaml-loader": "^0.1.0",
     "node-sass": "^4.9.0",
     "react": "^16.4.1",
     "react-delay-render": "^0.1.2",
