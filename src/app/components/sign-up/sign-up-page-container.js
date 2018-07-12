@@ -11,7 +11,7 @@ class SignUpPageContainer extends React.Component {
 
   render() {
     return (
-      <SignUpForm />
+      <SignUpForm signUp={this.signUp}/>
     )
   }
 }
