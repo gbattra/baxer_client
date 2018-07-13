@@ -16,7 +16,7 @@ class SignUpForm extends React.Component {
   }
 
   static props = {
-    signUp: PropTypes.func.isRequired
+    signUpClicked: PropTypes.func.isRequired
   }
 
   constructor(props, defaultProps) {
@@ -29,6 +29,11 @@ class SignUpForm extends React.Component {
     this.setState({
       form: form
     })
+  }
+
+  handleOnClick = () => {
+    const form = this.state.form
+    this.props.signUpClicked(form)
   }
 
   render() {
@@ -88,7 +93,7 @@ class SignUpForm extends React.Component {
                   placeholder='Confirm password'
                   type='password' />
 
-                <Button color='violet' fluid size='large'>
+                <Button color='violet' fluid size='large' onClick={this.handleOnClick}>
                   Sign Up
                 </Button>
               </Segment>

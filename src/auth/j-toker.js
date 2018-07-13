@@ -5,7 +5,7 @@ const Auth = require('j-toker')
 
 export const getAuth = () => {
   Auth.configure({
-    apiUrl: ''
+    apiUrl: 'http://localhost:3000'
   })
 
   return Auth
