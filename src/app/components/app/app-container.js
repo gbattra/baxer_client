@@ -38,8 +38,7 @@ class AppContainer extends React.Component {
             }} />
           </BrowserRouter>
         ) : (
-          <Redirect
-            to='/log-in'/>
+          <Redirect to='/log-in'  />
         )}
       </div>
     )
