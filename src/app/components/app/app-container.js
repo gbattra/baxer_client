@@ -17,12 +17,10 @@ class AppContainer extends React.Component {
   componentWillMount() {
     Auth.validateToken()
       .then((user) => {
-        this.setState({
-          loggedIn: true
-        })
+        console.log(user);
       })
-      .fail(() => {
-        return <Redirect to='/log-in' />
+      .fail((resp) => {
+        console.log(resp);
       })
   }
 

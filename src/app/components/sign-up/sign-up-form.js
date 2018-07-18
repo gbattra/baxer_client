@@ -8,10 +8,10 @@ class SignUpForm extends React.Component {
 
   state = {
     form: {
-      username: 'test',
-      email: 'test@gmail.com',
-      password: 'testpassword',
-      confirmPassword: 'testpassword'
+      username: 'greg',
+      email: 'gregattra@gmail.com',
+      password: 'testpassword12345',
+      confirmPassword: 'testpassword12345'
     }
   }
 

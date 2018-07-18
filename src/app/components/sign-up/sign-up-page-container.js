@@ -17,7 +17,7 @@ class SignUpPageContainer extends React.Component {
       email: form.email,
       password: form.password,
       password_confirmation: form.confirmPassword,
-      confirm_success_url: '',
+      confirm_success_url: 'http://localhost:8080/home',
       config: 'default'
     })
   }
