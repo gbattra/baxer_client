@@ -31,7 +31,7 @@ class NavButton extends React.Component {
     const alignment = this.props.icon ? 'left' : 'center'
     return (
       <Link to={this.props.route.path}>
-        <Button basic className='fw' onClick={this.onButtonClick}>
+        <Button basic fluid onClick={this.onButtonClick}>
           <Header as='h4' textAlign={alignment} style={{'textTransform':'capitalize'}}>
           {this.props.icon ? (
             <Icon circular bordered name='arrow left' size='large' />
