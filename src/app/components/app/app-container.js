@@ -1,7 +1,7 @@
 import './app-container.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import HomePageContainer from '../home/home-page-container'
 import { getAuth } from '../../../auth/j-toker'
 
@@ -10,31 +10,23 @@ const Auth = getAuth()
 
 class AppContainer extends React.Component {
 
-  state = {
-    loggedIn: false
+  static props = {
+    user: PropTypes.shape
   }
 
-  componentWillMount() {
-    Auth.validateToken()
-      .then((user) => {
-        console.log(user);
-      })
-      .fail((resp) => {
-        console.log(resp);
-      })
+  constructor(props) {
+    super(props)
   }
 
   render() {
     return (
       <div>
-        {this.state.loggedIn ? (
-          <BrowserRouter>
-            <Route path='/home' render={() => {
-              return (
-                <HomePageContainer />
-              )
-            }} />
-          </BrowserRouter>
+        {this.props.user.signedIn ? (
+          <Route path='/home' render={() => {
+            return (
+              <HomePageContainer />
+            )
+          }} />
         ) : (
           <Redirect to='/log-in'  />
         )}

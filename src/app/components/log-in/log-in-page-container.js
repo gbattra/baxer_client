@@ -6,24 +6,23 @@ import {
 } from 'semantic-ui-react'
 import LogInForm from './log-in-form'
 import { getAuth } from '../../../auth/j-toker'
+import { Redirect } from 'react-router-dom'
 
 
 const Auth = getAuth()
 
 class LogInPageContainer extends React.Component {
 
-  componentWillMount() {
-    Auth.validateToken()
-      .then((user) => {
-        debugger
-      })
-      .fail((resp) => {
-        console.log(resp);
-      })
+  static props = {
+    user: PropTypes.shape
   }
 
-  onSuccess = (resp) => {
+  state = {
+    user: this.props.user
+  }
 
+  constructor(props) {
+    super(props)
   }
 
   loginUser = (form) => {
@@ -31,16 +30,21 @@ class LogInPageContainer extends React.Component {
       email: form.email,
       password: form.password,
       config: 'default'
-    }).then(function(user) {
-      console.log(resp);
-    }.bind(this)).fail(function(resp) {
-      console.log(resp);
+    }).fail((resp) => {
+      console.log(resp)
     })
   }
 
   render() {
     return (
-      <LogInForm logInClicked={this.loginUser}/>
+      <div>
+        {this.state.user.signedIn ? (
+            <Redirect to='/home'  />
+          ) : (
+            <LogInForm logInClicked={this.loginUser}/>
+          )
+        }
+      </div>
     )
   }
 }

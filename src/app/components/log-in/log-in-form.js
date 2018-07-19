@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom'
 
 class LogInForm extends React.Component {
 
-  state = {
-    form: {
-      email: 'test@gmail.com',
-      password: 'testpassword'
-    }
-  }
-
   static props = {
     logInClicked: PropTypes.func.isRequired
+  }
+
+  state = {
+    form: {
+      email: 'gregattra@gmail.com',
+      password: 'testpassword12345'
+    }
   }
 
   constructor(props, defaultProps) {

@@ -28,13 +28,13 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route path="/home" render={() => {
-            return <AppContainer loggedIn={this.state.loggedIn} Auth={Auth}/>
+            return <AppContainer user={this.state.user}/>
           }} />
           <Route path="/log-in" render={() => {
-            return <LogInPageContainer Auth={Auth}/>
+            return <LogInPageContainer user={this.state.user} />
           }} />
           <Route path="/sign-up" render={() => {
-            return <SignUpPageContainer Auth={Auth}/>
+            return <SignUpPageContainer user={this.state.user} />
           }} />
         </Switch>
       </BrowserRouter>
