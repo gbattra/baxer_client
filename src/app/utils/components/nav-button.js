@@ -30,7 +30,7 @@ class NavButton extends React.Component {
   render() {
     const alignment = this.props.icon ? 'left' : 'center'
     return (
-      <Link to={`/${this.props.route.label}`}>
+      <Link to={this.props.route.path}>
         <Button basic className='fw' onClick={this.onButtonClick}>
           <Header as='h4' textAlign={alignment} style={{'textTransform':'capitalize'}}>
           {this.props.icon ? (
