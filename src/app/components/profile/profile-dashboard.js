@@ -36,7 +36,7 @@ class ProfileDashboard extends React.Component {
             <Search fluid className="search-container" />
           </Grid.Column>
           <Grid.Column width={3}>
-            <Link to='/profile/upload'>
+            <Link to='/home/profile/upload'>
               <Button icon labelPosition='right' size='large' floated='right'>
                 Upload
                 <Icon name='sign out alternate' rotated='counterclockwise' color='red'/>
