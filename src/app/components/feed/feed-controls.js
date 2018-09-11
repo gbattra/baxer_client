@@ -19,7 +19,7 @@ class FeedControls extends React.Component {
             <div>
               <Popup trigger={
                 <Button content='Skip' icon='red x' labelPosition='left' />
-              } content="Skipping a track doesn't send it to any new Rocketyrs." inverted />
+              } content="Skipping a track doesn't send it to any new Rocketyrs." />
             </div>
           </Grid.Column>
           <Grid.Column className="center aligned">
@@ -29,7 +29,7 @@ class FeedControls extends React.Component {
             <div>
               <Popup trigger={
                 <Button content='Like' icon='teal heart' labelPosition='right' />
-              } content="Liking a track sends it to 3 new Rocketyrs (once it's finished playing)." inverted />
+              } content="Liking a track sends it to 3 new Rocketyrs (once it's finished playing)." />
             </div>
           </Grid.Column>
         </Grid.Row>

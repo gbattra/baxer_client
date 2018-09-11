@@ -30,11 +30,13 @@ class TrackRank extends React.Component {
     const hSize = isMainRank ? 'h1' : 'h3'
     const subheader = isMainRank ? 'Track Rank' : `${trackRank.value}`
     return (
-      <Header as={hSize} block={isMainRank} icon color={trackRank.color}>
-        <Icon name={trackRank.icon} />
-          <span style={{'textTransform':'uppercase'}}>{trackRank.label}</span>
-        <Header.Subheader>{subheader}</Header.Subheader>
-      </Header>
+      <Segment inverted>
+        <Header inverted as={hSize} icon color={trackRank.color}>
+          <Icon name={trackRank.icon} />
+            <span style={{'textTransform':'uppercase'}}>{trackRank.label}</span>
+          <Header.Subheader>{subheader}</Header.Subheader>
+        </Header>
+      </Segment>
     )
   }
 
@@ -44,11 +46,11 @@ class TrackRank extends React.Component {
       content={
         <div>
           <Header as='h5' subheader="Track ranks are determined by the number of shares the track has. The more shares, the higher the rank" />
-          <Segment.Group horizontal>
+          <Segment.Group inverted horizontal>
             {this.props.trackRanks.map(
               (trackRank, i) => {
                 return (
-                  <Segment padded tertiary textAlign='center' key={i}>
+                  <Segment inverted padded tertiary textAlign='center' key={i}>
                     {this.trackRankHeader(trackRank, false)}
                   </Segment>
                 )

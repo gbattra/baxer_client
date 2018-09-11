@@ -24,7 +24,7 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <Grid columns={3} divided className="profile-container">
+      <Grid inverted columns={3} divided className="profile-container">
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container>

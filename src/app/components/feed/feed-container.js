@@ -23,7 +23,7 @@ class FeedContainer extends React.Component {
 
   render() {
     return (
-      <Grid columns={3} divided className="feed-container">
+      <Grid inverted columns={3} divided className="feed-container">
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container className="feed-lists-container">

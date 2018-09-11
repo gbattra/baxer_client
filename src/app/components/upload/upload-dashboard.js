@@ -61,7 +61,7 @@ class UploadDashboard extends React.Component {
       <Grid padded>
         <Grid.Row stretched centered>
           <Grid.Column>
-            <Header as='h3' icon>
+            <Header inverted as='h3' icon>
               <Icon name='sign out alternate' rotated='counterclockwise' color='red'/>
               Track Upload
               <Header.Subheader>{"Ready to show the world what you've made?"}</Header.Subheader>

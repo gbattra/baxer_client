@@ -4,7 +4,8 @@ import {
   Grid,
   Segment,
   Header,
-  Image
+  Image,
+  Divider
 } from 'semantic-ui-react'
 import { AllShapes } from '../../shapes/all-shapes'
 import { AllDefaults } from '../../tests/defaults/all-defaults'
@@ -26,29 +27,32 @@ class FeedQueue extends React.Component {
 
   render() {
     return (
-      <Grid padded centered>
-        <Grid.Row>
+      <Grid inverted padded centered>
+        <Grid.Row color='black'>
           <Grid.Column>
-            <Segment.Group>
+            <Segment.Group inverted>
               {this.props.upcomingTracks.map((track) => {
                 return (
-                  <Segment>
-                    <Grid verticalAlign='middle'>
-                      <Grid.Row>
-                        <Grid.Column width={2}>
-                          <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
-                        </Grid.Column>
-                        <Grid.Column width={14}>
-                          <Header as='h5'>
-                            {track.title}
-                            <Header.Subheader>
-                              {track.author}
-                            </Header.Subheader>
-                          </Header>
-                        </Grid.Column>
-                      </Grid.Row>
-                    </Grid>
-                  </Segment>
+                  <div>
+                    <Segment inverted>
+                      <Grid verticalAlign='middle'>
+                        <Grid.Row>
+                          <Grid.Column width={2}>
+                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
+                          </Grid.Column>
+                          <Grid.Column width={14}>
+                            <Header inverted as='h5'>
+                              {track.title}
+                              <Header.Subheader>
+                                {track.author}
+                              </Header.Subheader>
+                            </Header>
+                          </Grid.Column>
+                        </Grid.Row>
+                      </Grid>
+                    </Segment>
+                    <Divider />
+                  </div>
                 )
               })}
             </Segment.Group>

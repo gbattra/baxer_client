@@ -60,8 +60,8 @@ class AppContainer extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Grid celled='internally' className='app-container'>
-          <Grid.Row stretched>
+        <Grid inverted celled='internally' className='app-container'>
+          <Grid.Row color='black' stretched>
             <Grid.Column width={16} className='dashboard-container'>
               <Switch>
                 <Route path='/feed' exact render={() => <FeedContainer />} />
@@ -79,7 +79,7 @@ class AppContainer extends React.Component {
               </Switch>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
+          <Grid.Row color='black'>
             <Route path='/' render={() => {
                 return (
                   <Grid.Column width={16}>

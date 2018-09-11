@@ -29,7 +29,7 @@ class LikedTracksListItem extends React.Component {
   render() {
     return (
       <Segment color={this.props.likedTracksListItem.color}>
-        <Grid verticalAlign='middle'>
+        <Grid inverted verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={3}>
               <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />

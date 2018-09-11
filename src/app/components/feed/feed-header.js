@@ -18,7 +18,7 @@ class FeedHeader extends React.Component {
     return (
       <Grid centered padded>
         <Grid.Row>
-          <Header as='h2'>
+          <Header inverted as='h2'>
             <Image circular src={this.props.imageUrl} />
             {this.props.label}
           </Header>
