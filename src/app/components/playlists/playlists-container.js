@@ -25,7 +25,7 @@ class PlaylistsContainer extends React.Component {
 
   render() {
     return (
-      <Grid columns={3} divided className="playlists-container">
+      <Grid inverted columns={3} divided className="playlists-container">
         <Grid.Row centered stretched>
           <Grid.Column width={4}>
             <Container>

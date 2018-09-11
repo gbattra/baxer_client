@@ -28,24 +28,24 @@ class PlayerControls extends React.Component {
       <Grid>
         <Grid.Row stretched>
           <Grid.Column width={5}  verticalAlign='middle'>
-              <Button.Group>
-                <Button basic icon='shuffle' size='medium' />
-                <Button basic icon='step backward' size='medium' />
-                <Button basic icon='pause' size='huge' />
-                <Button basic icon='step forward' size='medium' />
-                <Button basic icon='redo alternate' size='medium' />
+              <Button.Group inverted>
+                <Button icon='shuffle' size='medium' />
+                <Button icon='step backward' size='medium' />
+                <Button icon='pause' size='huge' />
+                <Button icon='step forward' size='medium' />
+                <Button icon='redo alternate' size= 'medium' />
               </Button.Group>
           </Grid.Column>
           <Grid.Column width={5} verticalAlign='middle'>
             <div>
-              <Progress percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'marginBottom':'0'}} />
+              <Progress inverted percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'marginBottom':'0'}} />
             </div>
           </Grid.Column>
           <Grid.Column width={1} verticalAlign='middle'>
             <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' rounded />
           </Grid.Column>
           <Grid.Column width={4} verticalAlign='middle'>
-            <Header as='h5'>
+            <Header inverted as='h5'>
               {this.props.track.title}
               <Header.Subheader>
                 {this.props.track.author}
@@ -53,9 +53,8 @@ class PlayerControls extends React.Component {
             </Header>
           </Grid.Column>
           <Grid.Column width={1} verticalAlign='middle'>
-            <div>
               <Popup trigger={
-                <Button basic icon='ellipsis horizontal' size='medium'/>
+                <Button color='white' icon='ellipsis horizontal' size='medium'/>
               } content={
                 <Grid celled='internally'>
                   <Grid.Row>
@@ -75,7 +74,6 @@ class PlayerControls extends React.Component {
                   </Grid.Row>
                 </Grid>
               } hoverable />
-            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

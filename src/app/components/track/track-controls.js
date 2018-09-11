@@ -23,21 +23,21 @@ class TrackControls extends React.Component {
       <Grid>
         <Grid.Row stretched>
           <Grid.Column width={6}  verticalAlign='middle'>
-              <Button.Group>
-                <Button basic icon='step backward' size='huge' />
-                <Button basic icon='pause' size='massive' />
-                <Button basic icon='step forward' size='huge' />
+              <Button.Group inverted>
+                <Button icon='step backward' size='huge' />
+                <Button icon='pause' size='massive' />
+                <Button icon='step forward' size='huge' />
               </Button.Group>
           </Grid.Column>
           <Grid.Column width={6} verticalAlign='middle'>
             <div>
-              <Progress percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'marginBottom':'0'}} />
+              <Progress inverted percent={10} color={this.props.track.trackRank.color} size='tiny' style={{'marginBottom':'0'}} />
             </div>
           </Grid.Column>
           <Grid.Column width={4} verticalAlign='middle'>
-            <Button.Group>
-              <Button basic icon='heart' size='huge' />
-              <Button basic icon='horizontal ellipsis' size='huge' />
+            <Button.Group inverted>
+              <Button icon='heart' size='huge' />
+              <Button icon='horizontal ellipsis' size='huge' />
             </Button.Group>
           </Grid.Column>
         </Grid.Row>

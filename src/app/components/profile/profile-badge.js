@@ -23,12 +23,12 @@ class ProfileBadge extends React.Component {
     return (
       <div style={{'padding':'0.25em'}}>
         <Popup trigger = {
-          <Segment inverted  color={this.props.badge.color}>
+          <Segment color={this.props.badge.color}>
             <div style={{'padding-right':'0.5em'}}>
-              <Header as='h5' icon={this.props.badge.icon} subheader={this.props.badge.value} inverted content={this.props.badge.label} />
+              <Header as='h5' icon={this.props.badge.icon} subheader={this.props.badge.value} content={this.props.badge.label} />
             </div>
           </Segment>
-        } content={this.props.badge.description} inverted />
+        } content={this.props.badge.description} />
       </div>
     )
   }

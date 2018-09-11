@@ -38,7 +38,7 @@ class FeedsListItem extends React.Component {
             </Grid.Column>
             <Grid.Column width={3} className="right aligned">
               {this.state.isSelected ? (
-                  <Icon name='selected radio' size='large'/>
+                  <Icon color='black' name='selected radio' size='large'/>
               ) : null}
             </Grid.Column>
           </Grid.Row>

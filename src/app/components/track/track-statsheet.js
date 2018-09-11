@@ -26,7 +26,7 @@ class TrackStatsheet extends React.Component {
           <TrackRank trackRank={this.props.track.trackRank} />
         </Grid.Row>
         <Grid.Row centered>
-          <Statistic.Group size='small'>
+          <Statistic.Group inverted size='small'>
             <Statistic value='1,234' label='shares' />
             <Statistic value='71%' label='likes' />
             <Statistic value='3,423' label='total listens' />

@@ -26,7 +26,7 @@ class TrackPageContainer extends React.Component {
 
   render() {
     return (
-      <Grid divided columns={3} className="track-page-container">
+      <Grid inverted divided columns={3} className="track-page-container">
         <Grid.Column width={3}>
           <NavButton side='left' icon route={this.props.currentRoute} onClickFunc={this.navButtonClicked} />
         </Grid.Column>

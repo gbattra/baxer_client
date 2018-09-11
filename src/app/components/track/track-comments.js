@@ -32,7 +32,7 @@ class TrackComments extends React.Component {
         <Grid.Row>
           <Grid.Column>
             <Comment.Group className="comments-container">
-              <Header as='h3' dividing content='Comments' />
+              <Header inverted as='h3' dividing content='Comments' />
               <Comment>
                 <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
                 <Comment.Content>
@@ -44,13 +44,13 @@ class TrackComments extends React.Component {
                   <Comment key={i}>
                     <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
                     <Comment.Content>
-                      <Comment.Author as='a'>{comment.author}</Comment.Author>
+                      <Comment.Author as='a' style={{'color':'white'}}>{comment.author}</Comment.Author>
                       <Comment.Metadata>
-                        <div>{comment.datePosted}</div>
+                        <div style={{'color':'gray'}}>{comment.datePosted}</div>
                       </Comment.Metadata>
-                      <Comment.Text>{comment.body}</Comment.Text>
+                      <Comment.Text style={{'color':'white'}}>{comment.body}</Comment.Text>
                       <Comment.Actions>
-                        <Comment.Action>Reply</Comment.Action>
+                        <Comment.Action style={{'color':'grey'}}>Reply</Comment.Action>
                       </Comment.Actions>
                     </Comment.Content>
                     <Comment.Group>
@@ -59,11 +59,11 @@ class TrackComments extends React.Component {
                           <Comment key={i}>
                           <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
                           <Comment.Content>
-                            <Comment.Author as='a'>{reply.author}</Comment.Author>
+                            <Comment.Author as='a' style={{'color':'white'}}>{reply.author}</Comment.Author>
                             <Comment.Metadata>
-                              <div>{reply.datePosted}</div>
+                              <div style={{'color':'grey'}}>{reply.datePosted}</div>
                             </Comment.Metadata>
-                            <Comment.Text>{reply.body}</Comment.Text>
+                            <Comment.Text style={{'color':'white'}}>{reply.body}</Comment.Text>
                           </Comment.Content>
                         </Comment>
                       )
